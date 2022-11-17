@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/share/dual_vx300s_description/cmake/dual_vx300s_descriptionConfig.cmake

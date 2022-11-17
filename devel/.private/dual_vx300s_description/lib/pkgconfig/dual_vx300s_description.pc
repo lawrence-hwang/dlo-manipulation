@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description
+
+Name: dual_vx300s_description
+Description: Description of dual_vx300s_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

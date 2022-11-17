@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/dual_robot_msgs/cmake/dual_robot_msgsConfig-version.cmake

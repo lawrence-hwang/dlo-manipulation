@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/share/wire_modeling/cmake/wire_modelingConfig-version.cmake

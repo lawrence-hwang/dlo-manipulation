@@ -1,0 +1,69 @@
+<launch>
+
+  <arg name="robot_model"                       default="vx300s"/>
+  <arg name="base_link_frame"                   default="base_link"/>
+  <arg name="show_ar_tag"                       default="false"/>
+  <arg name="use_world_frame"                   default="true"/>
+  <arg name="external_urdf_loc"                 default=""/>
+  <arg name="external_srdf_loc"                 default=""/>
+  <arg name="mode_configs"                      default="$(find interbotix_xsarm_moveit)/config/modes.yaml"/>
+  <arg name="use_moveit_rviz"                   default="true"/>
+  <arg name="rviz_frame"                        default="world"/>
+  <arg name="use_gazebo"                        default="false"/>
+  <arg name="use_actual"                        default="true"/>
+  <arg name="use_fake"                          default="false"/>
+  <arg name="dof"                               default="6"/>
+  <arg name="world_name"                        default="$(find interbotix_xsarm_gazebo)/worlds/xsarm_gazebo.world"/>
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" />
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+  <!-- By default, we will load or override the robot_description -->
+  <arg name="load_robot_description" default="true"/>
+  <!-- Choose controller manager: fake, simple, or ros_control -->
+  <arg name="moveit_controller_manager" default="simple" />
+  <!-- Set execution mode for fake execution controllers -->
+  <arg name="fake_execution_type" default="interpolate" />
+  <!-- By default, hide joint_state_publisher's GUI in 'fake' controller_manager mode -->
+  <arg name="use_gui" default="false" />
+  <arg name="use_rviz" default="true" />
+  <!-- If needed, broadcast static tf for robot root -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world a_bot_base_link" />
+
+
+  <include if="$(arg use_actual)" file="$(find interbotix_xsarm_ros_control)/launch/xsarm_ros_control.launch">
+    <arg name="robot_model"                       value="$(arg robot_model)"/>
+    <arg name="robot_name"                        value="a_bot_"/>
+    <arg name="base_link_frame"                   value="$(arg base_link_frame)"/>
+    <arg name="show_ar_tag"                       value="$(arg show_ar_tag)"/>
+    <arg name="use_world_frame"                   value="$(arg use_world_frame)"/>
+    <arg name="external_urdf_loc"                 value="$(arg external_urdf_loc)"/>
+    <arg name="use_rviz"                          value="false"/>
+    <arg name="mode_configs"                      value="$(arg mode_configs)"/>
+    <arg name="dof"                               value="$(arg dof)"/>
+  </include>
+
+
+
+  
+  <!-- remap JointStates JointTrajectoryAction for moveit connection to robots -->
+  <node pkg="bringup_vx300s" type="remap_joints.py" name="a_bot_remap_joints" args="a_bot_" output="screen"/>
+  
+
+  <include file="$(find single_vx300s_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="moveit_controller_manager" value="$(arg moveit_controller_manager)" />
+    <arg name="fake_execution_type" value="$(arg fake_execution_type)"/>
+    <arg name="info" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="pipeline" value="$(arg pipeline)"/>
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find single_vx300s_moveit_config)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+    <arg name="rviz_config" value="$(dirname)/moveit.rviz"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+</launch>

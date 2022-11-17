@@ -1,0 +1,9 @@
+interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig-version.cmake /home/drojas/lawrence_wire/devel/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig.cmake /home/drojas/lawrence_wire/devel/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/lib/libinterbotix_xs_sdk.so /home/drojas/lawrence_wire/devel/lib/libinterbotix_xs_sdk.so
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/lib/pkgconfig/interbotix_xs_sdk.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/interbotix_xs_sdk.pc
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/lib/interbotix_xs_sdk/xs_sdk /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/xs_sdk
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/lib/interbotix_xs_sdk/xs_sdk_sim /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/xs_sdk_sim
+/home/drojas/lawrence_wire/devel/.private/interbotix_xs_sdk/lib/interbotix_xs_sdk/cmake.lock /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/cmake.lock

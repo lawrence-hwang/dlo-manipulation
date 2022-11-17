@@ -1,0 +1,12 @@
+Symlinking /home/drojas/lawrence_wire/devel/include/image_rotate/ImageRotateConfig.h
+Symlinking /home/drojas/lawrence_wire/devel/share/image_rotate/cmake/image_rotateConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/image_rotate/cmake/image_rotateConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/image_rotate/docs/ImageRotateConfig-usage.dox
+Symlinking /home/drojas/lawrence_wire/devel/share/image_rotate/docs/ImageRotateConfig.wikidoc
+Symlinking /home/drojas/lawrence_wire/devel/share/image_rotate/docs/ImageRotateConfig.dox
+Symlinking /home/drojas/lawrence_wire/devel/lib/libimage_rotate.so
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/image_rotate.pc
+Symlinking /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/image_rotate/__init__.py
+Symlinking /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/image_rotate/cfg/__init__.py
+Symlinking /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/image_rotate/cfg/ImageRotateConfig.py
+Symlinking /home/drojas/lawrence_wire/devel/lib/image_rotate/image_rotate

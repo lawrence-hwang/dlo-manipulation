@@ -1,0 +1,5 @@
+wire_manipulation/manipulation/dual_robot_control
+/home/drojas/lawrence_wire/devel/.private/dual_robot_control/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/dual_robot_control/share/dual_robot_control/cmake/dual_robot_controlConfig-version.cmake /home/drojas/lawrence_wire/devel/share/dual_robot_control/cmake/dual_robot_controlConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/dual_robot_control/share/dual_robot_control/cmake/dual_robot_controlConfig.cmake /home/drojas/lawrence_wire/devel/share/dual_robot_control/cmake/dual_robot_controlConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/dual_robot_control/lib/pkgconfig/dual_robot_control.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/dual_robot_control.pc

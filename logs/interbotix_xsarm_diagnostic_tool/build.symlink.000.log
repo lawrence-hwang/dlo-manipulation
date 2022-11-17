@@ -1,0 +1,7 @@
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xsarm_diagnostic_tool/cmake/interbotix_xsarm_diagnostic_toolConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xsarm_diagnostic_tool/cmake/interbotix_xsarm_diagnostic_toolConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xsarm_diagnostic_tool/bag2csv.py
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xsarm_diagnostic_tool/xsarm_diagnostic_tool
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xsarm_diagnostic_tool/cmake.lock
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xsarm_diagnostic_tool/xsarm_diagnostic_listener
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/interbotix_xsarm_diagnostic_tool.pc

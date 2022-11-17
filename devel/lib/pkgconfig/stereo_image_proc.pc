@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/pkgconfig/stereo_image_proc.pc

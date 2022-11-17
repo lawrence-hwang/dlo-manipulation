@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/lib/pkgconfig/dual_vx300s_description.pc

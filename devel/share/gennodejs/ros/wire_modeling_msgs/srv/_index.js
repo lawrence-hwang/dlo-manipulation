@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/share/gennodejs/ros/wire_modeling_msgs/srv/_index.js

@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/devel/.private/camera_calibration
+
+Name: camera_calibration
+Description: Description of camera_calibration
+Version: 1.16.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

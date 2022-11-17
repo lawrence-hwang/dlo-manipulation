@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/interbotix_xsarm_dual/share/interbotix_xsarm_dual/cmake/interbotix_xsarm_dualConfig.cmake

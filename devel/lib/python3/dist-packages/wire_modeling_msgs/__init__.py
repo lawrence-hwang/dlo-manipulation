@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/__init__.py

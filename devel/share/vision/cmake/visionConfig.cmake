@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/vision/share/vision/cmake/visionConfig.cmake

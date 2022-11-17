@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/share/common-lisp/ros/wire_modeling_msgs/srv/ProcessPointCloud.lisp

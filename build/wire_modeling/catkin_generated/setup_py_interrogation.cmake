@@ -1,0 +1,7 @@
+set(wire_modeling_SETUP_PY_SETUP_MODULE "distutils.core")
+set(wire_modeling_SETUP_PY_VERSION "0.0.0")
+set(wire_modeling_SETUP_PY_SCRIPTS "")
+set(wire_modeling_SETUP_PY_PACKAGES "wire_modeling")
+set(wire_modeling_SETUP_PY_PACKAGE_DIRS "src/wire_modeling")
+set(wire_modeling_SETUP_PY_MODULES "")
+set(wire_modeling_SETUP_PY_MODULE_DIRS "")

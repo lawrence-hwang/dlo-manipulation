@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/pkgconfig/wire_modeling_msgs.pc

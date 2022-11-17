@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/devel/.private/wire_modeling
+
+Name: wire_modeling
+Description: Description of wire_modeling
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

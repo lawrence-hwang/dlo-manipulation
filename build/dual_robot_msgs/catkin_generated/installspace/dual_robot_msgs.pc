@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/install
+
+Name: dual_robot_msgs
+Description: Description of dual_robot_msgs
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

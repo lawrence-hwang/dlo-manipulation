@@ -1,0 +1,4 @@
+Symlinking /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/libdynamixel_workbench_toolbox.so
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/dynamixel_workbench_toolbox.pc

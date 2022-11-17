@@ -1,0 +1,14 @@
+image_pipeline/stereo_image_proc
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/include/stereo_image_proc/DisparityConfig.h /home/drojas/lawrence_wire/devel/include/stereo_image_proc/DisparityConfig.h
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/share/stereo_image_proc/cmake/stereo_image_procConfig.cmake /home/drojas/lawrence_wire/devel/share/stereo_image_proc/cmake/stereo_image_procConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/share/stereo_image_proc/cmake/stereo_image_procConfig-version.cmake /home/drojas/lawrence_wire/devel/share/stereo_image_proc/cmake/stereo_image_procConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/share/stereo_image_proc/docs/DisparityConfig.wikidoc /home/drojas/lawrence_wire/devel/share/stereo_image_proc/docs/DisparityConfig.wikidoc
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/share/stereo_image_proc/docs/DisparityConfig.dox /home/drojas/lawrence_wire/devel/share/stereo_image_proc/docs/DisparityConfig.dox
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/share/stereo_image_proc/docs/DisparityConfig-usage.dox /home/drojas/lawrence_wire/devel/share/stereo_image_proc/docs/DisparityConfig-usage.dox
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/libstereo_image_proc.so /home/drojas/lawrence_wire/devel/lib/libstereo_image_proc.so
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/pkgconfig/stereo_image_proc.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/stereo_image_proc.pc
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/python3/dist-packages/stereo_image_proc/__init__.py /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/stereo_image_proc/__init__.py
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/python3/dist-packages/stereo_image_proc/cfg/DisparityConfig.py /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/stereo_image_proc/cfg/DisparityConfig.py
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/python3/dist-packages/stereo_image_proc/cfg/__init__.py /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/stereo_image_proc/cfg/__init__.py
+/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/stereo_image_proc/stereo_image_proc /home/drojas/lawrence_wire/devel/lib/stereo_image_proc/stereo_image_proc

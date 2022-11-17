@@ -1,0 +1,6 @@
+devel_space: /home/drojas/lawrence_wire/devel
+install: false
+install_space: /home/drojas/lawrence_wire/install
+profile: default
+source_space: /home/drojas/lawrence_wire/src
+workspace: /home/drojas/lawrence_wire

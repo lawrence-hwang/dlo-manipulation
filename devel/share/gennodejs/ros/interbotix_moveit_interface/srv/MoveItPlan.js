@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/share/gennodejs/ros/interbotix_moveit_interface/srv/MoveItPlan.js

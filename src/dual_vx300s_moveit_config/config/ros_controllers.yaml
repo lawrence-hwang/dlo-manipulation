@@ -1,0 +1,100 @@
+a_bot_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - a_bot_waist
+    - a_bot_shoulder
+    - a_bot_elbow
+    - a_bot_forearm_roll
+    - a_bot_wrist_angle
+    - a_bot_wrist_rotate
+  gains:
+    a_bot_waist:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    a_bot_shoulder:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    a_bot_elbow:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    a_bot_forearm_roll:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    a_bot_wrist_angle:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    a_bot_wrist_rotate:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+b_bot_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - b_bot_waist
+    - b_bot_shoulder
+    - b_bot_elbow
+    - b_bot_forearm_roll
+    - b_bot_wrist_angle
+    - b_bot_wrist_rotate
+  gains:
+    b_bot_waist:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    b_bot_shoulder:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    b_bot_elbow:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    b_bot_forearm_roll:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    b_bot_wrist_angle:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    b_bot_wrist_rotate:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+a_bot_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - a_bot_left_finger
+  gains:
+    a_bot_left_finger:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+b_bot_gripper_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - b_bot_left_finger
+  gains:
+    b_bot_left_finger:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

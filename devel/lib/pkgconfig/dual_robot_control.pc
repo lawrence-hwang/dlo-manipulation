@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/dual_robot_control/lib/pkgconfig/dual_robot_control.pc

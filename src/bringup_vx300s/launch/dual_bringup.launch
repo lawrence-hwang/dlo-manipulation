@@ -1,0 +1,65 @@
+<launch>
+  <!-- specify the planning pipeline -->
+  <arg name="pipeline" default="ompl" />
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+  <!-- By default, we will load or override the robot_description -->
+  <arg name="load_robot_description" default="true"/>
+  <!-- Choose controller manager: fake, simple, or ros_control -->
+  <arg name="moveit_controller_manager" default="simple" />
+  <!-- Set execution mode for fake execution controllers -->
+  <arg name="fake_execution_type" default="interpolate" />
+  <!-- By default, hide joint_state_publisher's GUI in 'fake' controller_manager mode -->
+  <arg name="use_gui" default="false" />
+  <arg name="use_rviz" default="true" />
+  <!-- If needed, broadcast static tf for robot root -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world base_link" />
+
+  <!-- remap and rename JointStates for moveit connection to robots -->
+  <node pkg="bringup_vx300s" type="remap_joints.py" name="remap_joints" args="a_bot_ b_bot_" output="screen"/>
+
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher">
+  </node>
+  
+  <!-- load robot description for ros control -->
+  <param name="robot_description" command="xacro  '$(find dual_vx300s_description)/urdf/dual_vx300s.urdf.xacro'"/>
+  
+  <!-- bringup a_bot ros control -->
+  <include file="$(find interbotix_xsarm_ros_control)/launch/xsarm_ros_control.launch">
+    <arg name="robot_model"                       value="vx300s"/>
+    <arg name="robot_name"                        value="a_bot_"/>
+    <arg name="controllers"                       value="$(find bringup_vx300s)/config/a_bot_controllers.yaml"/>
+    <arg name="motor_configs"                     value="$(find bringup_vx300s)/config/a_bot_motor_config.yaml"/>
+    <arg name="dof"                               value="6"/>
+  </include>
+
+  <!-- bringup b_bot ros control -->
+  <include file="$(find interbotix_xsarm_ros_control)/launch/xsarm_ros_control.launch">
+    <arg name="robot_model"                       value="vx300s"/>
+    <arg name="robot_name"                        value="b_bot_"/>
+    <arg name="controllers"                       value="$(find bringup_vx300s)/config/b_bot_controllers.yaml"/>
+    <arg name="motor_configs"                     value="$(find bringup_vx300s)/config/b_bot_motor_config.yaml"/>
+    <arg name="dof"                               value="6"/>
+  </include>
+  
+  <!-- launch move group -->
+  <include file="$(find dual_vx300s_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="moveit_controller_manager" value="$(arg moveit_controller_manager)" />
+    <arg name="fake_execution_type" value="$(arg fake_execution_type)"/>
+    <arg name="info" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="pipeline" value="$(arg pipeline)"/>
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find dual_vx300s_moveit_config)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+    <arg name="rviz_config" value="$(dirname)/moveit.rviz"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+</launch>

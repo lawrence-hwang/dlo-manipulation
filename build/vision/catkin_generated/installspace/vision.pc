@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/install
+
+Name: vision
+Description: Description of vision
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

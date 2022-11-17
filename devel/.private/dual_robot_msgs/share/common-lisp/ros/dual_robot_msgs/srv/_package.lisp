@@ -1,0 +1,15 @@
+(cl:defpackage dual_robot_msgs-srv
+  (:use )
+  (:export
+   "GRASPOBJECT"
+   "<GRASPOBJECT-REQUEST>"
+   "GRASPOBJECT-REQUEST"
+   "<GRASPOBJECT-RESPONSE>"
+   "GRASPOBJECT-RESPONSE"
+   "GRASPWIRE"
+   "<GRASPWIRE-REQUEST>"
+   "GRASPWIRE-REQUEST"
+   "<GRASPWIRE-RESPONSE>"
+   "GRASPWIRE-RESPONSE"
+  ))
+

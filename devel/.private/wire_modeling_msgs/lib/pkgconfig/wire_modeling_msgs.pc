@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs
+
+Name: wire_modeling_msgs
+Description: Description of wire_modeling_msgs
+Version: 0.0.0
+Cflags: -I/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/include
+Libs: -L${prefix}/lib 
+Requires: 

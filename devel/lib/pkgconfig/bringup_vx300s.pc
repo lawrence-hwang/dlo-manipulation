@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/bringup_vx300s/lib/pkgconfig/bringup_vx300s.pc

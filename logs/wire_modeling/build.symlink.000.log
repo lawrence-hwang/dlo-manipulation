@@ -1,0 +1,4 @@
+Symlinking /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/wire_modeling.pc
+Symlinking /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/wire_modeling/__init__.py

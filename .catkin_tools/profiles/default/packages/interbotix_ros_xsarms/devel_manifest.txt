@@ -1,0 +1,2 @@
+interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_ros_xsarms
+/home/drojas/lawrence_wire/devel/.private/interbotix_ros_xsarms/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock

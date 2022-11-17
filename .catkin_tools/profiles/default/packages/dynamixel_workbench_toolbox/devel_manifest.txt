@@ -1,0 +1,6 @@
+interbotix_ros_core/interbotix_ros_xseries/dynamixel_workbench_toolbox
+/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/lib/libdynamixel_workbench_toolbox.so /home/drojas/lawrence_wire/devel/lib/libdynamixel_workbench_toolbox.so
+/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/lib/pkgconfig/dynamixel_workbench_toolbox.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/dynamixel_workbench_toolbox.pc

@@ -1,0 +1,10 @@
+(cl:defpackage wire_modeling_msgs-srv
+  (:use )
+  (:export
+   "PROCESSPOINTCLOUD"
+   "<PROCESSPOINTCLOUD-REQUEST>"
+   "PROCESSPOINTCLOUD-REQUEST"
+   "<PROCESSPOINTCLOUD-RESPONSE>"
+   "PROCESSPOINTCLOUD-RESPONSE"
+  ))
+

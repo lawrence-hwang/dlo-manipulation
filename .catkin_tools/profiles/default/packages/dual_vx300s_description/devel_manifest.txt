@@ -1,0 +1,5 @@
+dual_vx300s_description
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/share/dual_vx300s_description/cmake/dual_vx300s_descriptionConfig-version.cmake /home/drojas/lawrence_wire/devel/share/dual_vx300s_description/cmake/dual_vx300s_descriptionConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/share/dual_vx300s_description/cmake/dual_vx300s_descriptionConfig.cmake /home/drojas/lawrence_wire/devel/share/dual_vx300s_description/cmake/dual_vx300s_descriptionConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/dual_vx300s_description/lib/pkgconfig/dual_vx300s_description.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/dual_vx300s_description.pc

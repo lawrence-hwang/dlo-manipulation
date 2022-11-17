@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/interbotix_common_modules/lib/pkgconfig/interbotix_common_modules.pc

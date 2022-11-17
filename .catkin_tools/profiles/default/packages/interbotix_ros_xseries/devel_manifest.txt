@@ -1,0 +1,2 @@
+interbotix_ros_core/interbotix_ros_xseries/interbotix_ros_xseries
+/home/drojas/lawrence_wire/devel/.private/interbotix_ros_xseries/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock

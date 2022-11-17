@@ -1,0 +1,12 @@
+Symlinking /home/drojas/lawrence_wire/devel/./local_setup.bash
+Symlinking /home/drojas/lawrence_wire/devel/./setup.bash
+Symlinking /home/drojas/lawrence_wire/devel/./_setup_util.py
+Symlinking /home/drojas/lawrence_wire/devel/./local_setup.sh
+Symlinking /home/drojas/lawrence_wire/devel/./local_setup.zsh
+Symlinking /home/drojas/lawrence_wire/devel/./setup.zsh
+Symlinking /home/drojas/lawrence_wire/devel/./cmake.lock
+Symlinking /home/drojas/lawrence_wire/devel/./env.sh
+Symlinking /home/drojas/lawrence_wire/devel/./setup.sh
+Symlinking /home/drojas/lawrence_wire/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/catkin_tools_prebuild.pc

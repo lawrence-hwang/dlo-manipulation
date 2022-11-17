@@ -1,0 +1,7 @@
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xs_sdk/cmake/interbotix_xs_sdkConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/libinterbotix_xs_sdk.so
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/interbotix_xs_sdk.pc
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/xs_sdk
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/xs_sdk_sim
+Symlinking /home/drojas/lawrence_wire/devel/lib/interbotix_xs_sdk/cmake.lock

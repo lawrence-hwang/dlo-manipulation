@@ -1,0 +1,6 @@
+wire_manipulation/wire_modeling
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/share/wire_modeling/cmake/wire_modelingConfig-version.cmake /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/share/wire_modeling/cmake/wire_modelingConfig.cmake /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/lib/pkgconfig/wire_modeling.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/wire_modeling.pc
+/home/drojas/lawrence_wire/devel/.private/wire_modeling/lib/python3/dist-packages/wire_modeling/__init__.py /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/wire_modeling/__init__.py

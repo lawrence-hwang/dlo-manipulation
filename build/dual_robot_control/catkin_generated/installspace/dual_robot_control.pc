@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/install
+
+Name: dual_robot_control
+Description: Description of dual_robot_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

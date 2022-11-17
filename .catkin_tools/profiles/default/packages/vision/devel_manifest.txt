@@ -1,0 +1,5 @@
+wire_manipulation/vision
+/home/drojas/lawrence_wire/devel/.private/vision/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock
+/home/drojas/lawrence_wire/devel/.private/vision/share/vision/cmake/visionConfig.cmake /home/drojas/lawrence_wire/devel/share/vision/cmake/visionConfig.cmake
+/home/drojas/lawrence_wire/devel/.private/vision/share/vision/cmake/visionConfig-version.cmake /home/drojas/lawrence_wire/devel/share/vision/cmake/visionConfig-version.cmake
+/home/drojas/lawrence_wire/devel/.private/vision/lib/pkgconfig/vision.pc /home/drojas/lawrence_wire/devel/lib/pkgconfig/vision.pc

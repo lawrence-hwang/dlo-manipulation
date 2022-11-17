@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/install
+
+Name: wire_modeling_msgs
+Description: Description of wire_modeling_msgs
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

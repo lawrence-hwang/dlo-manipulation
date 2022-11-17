@@ -1,0 +1,1 @@
+/home/drojas/lawrence_wire/devel/.private/depth_image_proc/lib/pkgconfig/depth_image_proc.pc

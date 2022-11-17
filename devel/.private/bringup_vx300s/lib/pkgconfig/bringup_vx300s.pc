@@ -1,0 +1,8 @@
+prefix=/home/drojas/lawrence_wire/devel/.private/bringup_vx300s
+
+Name: bringup_vx300s
+Description: Description of bringup_vx300s
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
