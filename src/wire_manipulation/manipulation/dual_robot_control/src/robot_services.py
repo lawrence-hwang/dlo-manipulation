@@ -40,7 +40,7 @@ class RobotControl:
         self.grasp_object_name = ""
 
         # Init arms and gripper to sleep, open
-        self._set_arm_sleep(self.left_arm) # testing helper function
+        self._set_arm_sleep(self.left_arm) # test changes
         self._set_arm_sleep(self.right_arm)
         # self.left_arm.set_named_target("sleep")
         # self.right_arm.set_named_target("sleep")
