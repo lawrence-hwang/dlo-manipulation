@@ -1,0 +1,19 @@
+prefix: a_bot_
+
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - a_bot_waist
+    - a_bot_shoulder
+    - a_bot_elbow
+    - a_bot_forearm_roll
+    - a_bot_wrist_angle
+    - a_bot_wrist_rotate
+  constraints:
+    goal_time: 1
+    stopped_velocity_tolerance: 0.02
+
+gripper_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - a_bot_left_finger
