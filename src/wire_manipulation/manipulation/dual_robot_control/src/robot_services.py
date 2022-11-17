@@ -39,55 +39,39 @@ class RobotControl:
 
         self.grasp_object_name = ""
 
-        # Init arms and gripper to sleep, open
-        self._set_arm_sleep(self.left_arm) # test changes
-        self._set_arm_sleep(self.right_arm)
-        # self.left_arm.set_named_target("sleep")
-        # self.right_arm.set_named_target("sleep")
+        # Init arms and gripper to sleep, open respectively
+        self._sleep_all()
 
-        # r_error_code_val, r_plan, r_planning_time, r_error_code = self.right_arm.plan()
-        # r_success = (r_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
-        # l_error_code_val, l_plan, l_planning_time, l_error_code = self.left_arm.plan()
-        # l_success = (l_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
-
-        # # Init arms and gripper to sleep, open
-        # self.left_arm.set_named_target("sleep")
-        # self.right_arm.set_named_target("sleep")
-
-        # r_error_code_val, r_plan, r_planning_time, r_error_code = self.right_arm.plan()
-        # r_success = (r_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
-        # l_error_code_val, l_plan, l_planning_time, l_error_code = self.left_arm.plan()
-        # l_success = (l_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
-
-        # if (r_success and l_success):
-        #     self.left_arm.execute(l_plan)
-        #     self.right_arm.execute(r_plan)
-        # else:
-        #     sys.exit()
-
-        self.right_gripper.set_named_target("open")
-        self.left_gripper.set_named_target("open")
-        _, r_open_gripper, _, _ = self.right_gripper.plan()
-        _, l_open_gripper, _, _ = self.left_gripper.plan()
-        self.right_gripper.execute(r_open_gripper)
-        self.left_gripper.execute(l_open_gripper)
-
-    def _set_arm_sleep(arm) -> None:
+    def _sleep_all(self) -> None:
         '''
-        General private helper function to sleep a single arm.
+        Sleep both arms and grippers.
+        
         Arguments:
-            - arm: reference to an arm object
+            - None
         Returns:
             - None
         '''
-        arm.set_named_target("sleep")
-        error_code_val, plan, planning_time, error_code = arm.plan()
-        success_flag = (error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
-        if success_flag:
-            arm.execute(plan)
+        # Set named position
+        self.left_arm.set_named_target("sleep")
+        self.right_arm.set_named_target("sleep")
+        self.right_gripper.set_named_target("open")
+        self.left_gripper.set_named_target("open")
+        # Planning
+        r_error_code_val, r_plan, r_planning_time, r_error_code = self.right_arm.plan()
+        l_error_code_val, l_plan, l_planning_time, l_error_code = self.left_arm.plan()
+        _, r_open_gripper, _, _ = self.right_gripper.plan()
+        _, l_open_gripper, _, _ = self.left_gripper.plan()
+        r_success = (r_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
+        l_success = (l_error_code_val == moveit_msgs.msg.MoveItErrorCodes.SUCCESS)
+        # Execution
+        if (r_success and l_success):
+            self.left_arm.execute(l_plan)
+            self.right_arm.execute(r_plan)
+            self.right_gripper.execute(r_open_gripper)
+            self.left_gripper.execute(l_open_gripper)
         else:
             sys.exit()
-
+        
     def grasp_object_callback(self,req):
 
         # insert Grasp Object in Scene 
