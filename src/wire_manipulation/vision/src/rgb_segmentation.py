@@ -82,6 +82,42 @@ class RGBSegmentation(object):
         rospy.loginfo(len(largest_area))
         return cv2.drawContours(mask2,[largest_area[-1]], 0, (255,255,255,255), -1)
 
+    def define_camera(self, frame_id : str, height : int, width : int, distortion_model : str, binning_x : int = 0, binning_y : int = 0):
+        """
+        Defines parameters for camera, return CameraInfo object specifying camera details.
+        
+        Arguments:
+            frame_id : str
+                String specifying frame id.
+            height : int
+                Int representing height of camera resolution.
+            width : int
+                Int representing width of camera resolution.
+            distortion_model : str
+                String representing model of distortion used in camera.
+            binning_x : int = 0
+                Int representing binning x value, default 0.
+            binning_y : int = 0
+                Int representing bnning y value, default 0.
+        Returns:
+            cam_info : CameraInfo
+                CameraInfo object detailing infromation about the camera.
+        """
+        cam_info = CameraInfo()
+        cam_info.header.stamp = rospy.Time.now()
+        cam_info.header.frame_id = frame_id # "camera_color_optical_frame"
+        cam_info.height = height # 720
+        cam_info.width = width # 1280
+        cam_info.distortion_model = distortion_model # "plumb_bob"
+        cam_info.D = self.depth_cam_info.D
+        cam_info.K = self.depth_cam_info.K
+        cam_info.R = self.depth_cam_info.R
+        cam_info.P = self.depth_cam_info.P
+        cam_info.binning_x = binning_x
+        cam_info.binning_y = binning_y
+        cam_info.roi = self.depth_cam_info.roi
+        return cam_info
+
     def rgb_callback(self, data):
         try:
             cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
@@ -96,30 +132,17 @@ class RGBSegmentation(object):
         kernel = np.ones((5,5), np.uint8)
         filtered_wire = self.calc_largest_contour(bitwise_img, kernel)
 
-        # erosion
+        # Erosion of image
         img_erosion = cv2.erode(filtered_wire, kernel, iterations=2)
 
         # Get copy of depth image
-        depth = self.depth_data
-        depth_copy = depth.copy()
+        depth_copy = self.depth_data.copy()
 
-        # use segmented RGB image as mask for depth image
+        # Use segmented RGB image as mask for depth image
         new_depth_img = cv2.bitwise_and(depth_copy, depth_copy, mask = img_erosion )
 
         # Define Camera info for publish
-        cam_info = CameraInfo()
-        cam_info.header.stamp = rospy.Time.now()
-        cam_info.header.frame_id = "camera_color_optical_frame"
-        cam_info.height = 720
-        cam_info.width = 1280
-        cam_info.distortion_model = "plumb_bob"
-        cam_info.D = self.depth_cam_info.D
-        cam_info.K = self.depth_cam_info.K
-        cam_info.R = self.depth_cam_info.R
-        cam_info.P = self.depth_cam_info.P
-        cam_info.binning_x = 0
-        cam_info.binning_y = 0
-        cam_info.roi = self.depth_cam_info.roi
+        cam_info = self.define_camera("camera_color_optical_frame", 720, 1280, "plumb_bob")
 
         # Segmented RGB Image
         segmented_img = self.bridge_object.cv2_to_imgmsg(bitwise_img,"passthrough")
@@ -130,7 +153,7 @@ class RGBSegmentation(object):
         self.seg_depth_img.header.stamp = cam_info.header.stamp
         self.seg_depth_img.header.frame_id = "camera_color_optical_frame"
     
-        # Publish
+        # Publish segmented image, segmented depth image, and camera info.
         self.image_pub.publish(segmented_img)
         self.depth_image_pub.publish(self.seg_depth_img)
         self.depth_img_cam_info_pub.publish(cam_info)
