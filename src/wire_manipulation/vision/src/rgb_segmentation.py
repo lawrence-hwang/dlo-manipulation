@@ -19,6 +19,7 @@ class RGBSegmentation(object):
         self.depth_data = []
         self.depth_cam_info = CameraInfo()
         self.seg_depth_img = Image()
+
     def rgb_callback(self,data):
         try:
             cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
@@ -26,11 +27,8 @@ class RGBSegmentation(object):
             print(e)
         rospy.sleep(0.01)
 
-        
-
-
         # Segment RGB by Coloe
-        lower_color = np.array([ 124, 72, 47])
+        lower_color = np.array([ 124, 72, 47]) # Specific values here for the pink wire?
         upper_color = np.array([179, 255, 255])
         hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
         mask = cv2.inRange(hsv, lower_color, upper_color)
@@ -42,7 +40,6 @@ class RGBSegmentation(object):
         # cv2.waitKey(0) # waits until a key is pressed
         # cv2.destroyAllWindows() # destroys the window showing image
 
-
         new_img = cv2.bitwise_and(cv_image, cv_image, mask = mask )
 
         # dilation
@@ -50,8 +47,6 @@ class RGBSegmentation(object):
         img_dilation = cv2.dilate(new_img, kernel, iterations=1)
         img_dilation_gray = cv2.cvtColor(img_dilation,cv2.COLOR_BGR2GRAY)
 
-        
-        
         # find largest contour
         contours, hierch = cv2.findContours(img_dilation_gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
         largest_area = sorted(contours, key= cv2.contourArea)
@@ -106,7 +101,6 @@ class RGBSegmentation(object):
 
     def depth_cam_info_callback( self,msg):
         self.depth_cam_info = msg
-
 
 def main():
     rospy.init_node("seg_node",anonymous=True)
