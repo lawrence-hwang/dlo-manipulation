@@ -24,7 +24,7 @@ class RGBSegmentation(object):
         self.upper_color = np.array([179, 255, 255])
         self.lower_color = np.array([124, 72, 47])
 
-    def segment_rgb(self, lower_color : np.array, upper_color : np.array, cv_image):
+    def segment_rgb(self, lower_color : np.array, upper_color : np.array, cv_image, preview : bool = False):
         """
         Wire segmenting process by Coloe. Given NumPy arrays representing RGB values for an upper and lower color, and a cv_image from the Intel Realsense device, return a mask.
 
@@ -36,14 +36,18 @@ class RGBSegmentation(object):
             cv_image : numpy.array
                 Represent cv_image in numpy.array format
         Returns:
-            mask : 
-                Mask object created from upper and lower color, and cv_image
+            bitwise_img : 
+                New image produced from bitwise of cv_image and mask.
         """
         hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
         mask = cv2.inRange(hsv, lower_color, upper_color)
-        return mask
+        
+        if preview:
+            self._image_preview(cv_image, hsv, mask)
+        
+        return cv2.bitwise_and(cv_image, cv_image, mask = mask)
 
-    def _image_preview(self, cv_image, hsv, mask):
+    def _image_preview(self, cv_image : np.array, hsv : np.array, mask : np.array) -> None:
         """
         Helper method to preview segmented images
         """
@@ -63,13 +67,11 @@ class RGBSegmentation(object):
         rospy.sleep(0.01)
 
         # Segment RGB by Coloe
-        mask = self.segment_rgb(self.lower_color, self.upper_color, cv_image)
-        # _image_preview(cv_image, hsv, mask)
-        new_img = cv2.bitwise_and(cv_image, cv_image, mask = mask )
+        bitwise_img = self.segment_rgb(self.lower_color, self.upper_color, cv_image, False)
 
         # dilation
         kernel = np.ones((5,5), np.uint8)
-        img_dilation = cv2.dilate(new_img, kernel, iterations=1)
+        img_dilation = cv2.dilate(bitwise_img, kernel, iterations=1)
         img_dilation_gray = cv2.cvtColor(img_dilation,cv2.COLOR_BGR2GRAY)
 
         # find largest contour
@@ -107,7 +109,7 @@ class RGBSegmentation(object):
         cam_info.roi = self.depth_cam_info.roi
 
         # Segmented RGB Image
-        segmented_img = self.bridge_object.cv2_to_imgmsg(new_img,"passthrough")
+        segmented_img = self.bridge_object.cv2_to_imgmsg(bitwise_img,"passthrough")
         segmented_img.header.frame_id = "camera_color_optical_frame"
 
         # Segmneted Depth Image
