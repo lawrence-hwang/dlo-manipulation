@@ -59,6 +59,29 @@ class RGBSegmentation(object):
         cv2.waitKey(0) # waits until a key is pressed
         cv2.destroyAllWindows() # destroys the window showing image
 
+    def calc_largest_contour(self, bitwise_img, kernel):
+        """
+        Dilation of bitwise image and calculation of greatest contour from that information.
+
+        Arguments:
+            bitwise_img :
+                Previously calculated image of bitwise cv_image and mask.
+            kernel : 
+        Returns:
+            Filtered wire representing greatest contour
+        """
+        # Dilation
+        img_dilation = cv2.dilate(bitwise_img, kernel, iterations=1)
+        img_dilation_gray = cv2.cvtColor(img_dilation,cv2.COLOR_BGR2GRAY)
+
+        # Contour calculation
+        contours, hierch = cv2.findContours(img_dilation_gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        largest_area = sorted(contours, key= cv2.contourArea)
+        mask2 = np.zeros(img_dilation_gray.shape, np.uint8)
+
+        rospy.loginfo(len(largest_area))
+        return cv2.drawContours(mask2,[largest_area[-1]], 0, (255,255,255,255), -1)
+
     def rgb_callback(self, data):
         try:
             cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
@@ -66,22 +89,12 @@ class RGBSegmentation(object):
             print(e)
         rospy.sleep(0.01)
 
-        # Segment RGB by Coloe
+        # Segment RGB; by Coloe
         bitwise_img = self.segment_rgb(self.lower_color, self.upper_color, cv_image, False)
 
-        # dilation
+        # Dilation and calculating largest contour
         kernel = np.ones((5,5), np.uint8)
-        img_dilation = cv2.dilate(bitwise_img, kernel, iterations=1)
-        img_dilation_gray = cv2.cvtColor(img_dilation,cv2.COLOR_BGR2GRAY)
-
-        # find largest contour
-        contours, hierch = cv2.findContours(img_dilation_gray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-        largest_area = sorted(contours, key= cv2.contourArea)
-        mask2 = np.zeros(img_dilation_gray.shape, np.uint8)
-
-        rospy.loginfo(len(largest_area))
-
-        filtered_wire = cv2.drawContours(mask2,[largest_area[-1]], 0, (255,255,255,255), -1)
+        filtered_wire = self.calc_largest_contour(bitwise_img, kernel)
 
         # erosion
         img_erosion = cv2.erode(filtered_wire, kernel, iterations=2)
