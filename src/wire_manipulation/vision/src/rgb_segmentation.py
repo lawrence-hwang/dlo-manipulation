@@ -43,6 +43,18 @@ class RGBSegmentation(object):
         mask = cv2.inRange(hsv, lower_color, upper_color)
         return mask
 
+    def _image_preview(self, cv_image, hsv, mask):
+        """
+        Helper method to preview segmented images
+        """
+        cv2.imshow('Sample image: cv_image',cv_image)
+        cv2.imshow('Sample image: hsv',hsv)
+        cv2.imshow('Sample image: mask',mask)
+ 
+        # Exit preview windows and close
+        cv2.waitKey(0) # waits until a key is pressed
+        cv2.destroyAllWindows() # destroys the window showing image
+
     def rgb_callback(self, data):
         try:
             cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
@@ -52,14 +64,7 @@ class RGBSegmentation(object):
 
         # Segment RGB by Coloe
         mask = self.segment_rgb(self.lower_color, self.upper_color, cv_image)
-
-        # cv2.imshow('sample imagsdfe',cv_image)
-        # cv2.imshow('sample image',hsv)
-        # cv2.imshow('sample imagdfsde',mask)
- 
-        # cv2.waitKey(0) # waits until a key is pressed
-        # cv2.destroyAllWindows() # destroys the window showing image
-
+        # _image_preview(cv_image, hsv, mask)
         new_img = cv2.bitwise_and(cv_image, cv_image, mask = mask )
 
         # dilation
