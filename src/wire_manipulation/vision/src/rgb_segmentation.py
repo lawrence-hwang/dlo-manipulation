@@ -20,7 +20,30 @@ class RGBSegmentation(object):
         self.depth_cam_info = CameraInfo()
         self.seg_depth_img = Image()
 
-    def rgb_callback(self,data):
+        # For wire RGB color definition
+        self.upper_color = np.array([179, 255, 255])
+        self.lower_color = np.array([124, 72, 47])
+
+    def segment_rgb(self, lower_color : np.array, upper_color : np.array, cv_image):
+        """
+        Wire segmenting process by Coloe. Given NumPy arrays representing RGB values for an upper and lower color, and a cv_image from the Intel Realsense device, return a mask.
+
+        Arguments:
+            lower_color : numpy.array 
+                Represent lower_color for wire segmentation in numpy.array RGB format
+            upper_color : numpy.array
+                Represent upper_color for wire segmentation in numpy.array RGB format
+            cv_image : numpy.array
+                Represent cv_image in numpy.array format
+        Returns:
+            mask : 
+                Mask object created from upper and lower color, and cv_image
+        """
+        hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+        mask = cv2.inRange(hsv, lower_color, upper_color)
+        return mask
+
+    def rgb_callback(self, data):
         try:
             cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
         except CvBridgeError as e:
@@ -28,10 +51,11 @@ class RGBSegmentation(object):
         rospy.sleep(0.01)
 
         # Segment RGB by Coloe
-        lower_color = np.array([ 124, 72, 47]) # Specific values here for the pink wire?
-        upper_color = np.array([179, 255, 255])
-        hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
-        mask = cv2.inRange(hsv, lower_color, upper_color)
+        # lower_color = np.array([124, 72, 47]) # Specific values here for the pink wire?
+        # upper_color = np.array([179, 255, 255])
+        # hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+        # mask = cv2.inRange(hsv, lower_color, upper_color)
+        mask = self.segment_rgb(self.lower_color, self.upper_color, cv_image)
 
         # cv2.imshow('sample imagsdfe',cv_image)
         # cv2.imshow('sample image',hsv)
