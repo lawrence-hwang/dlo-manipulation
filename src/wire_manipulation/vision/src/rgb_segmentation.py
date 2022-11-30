@@ -20,7 +20,7 @@ class RGBSegmentation(object):
         self.depth_cam_info = CameraInfo()
         self.seg_depth_img = Image()
 
-        # For wire RGB color definition
+        # For wire RGB color definition; values for pink wire?
         self.upper_color = np.array([179, 255, 255])
         self.lower_color = np.array([124, 72, 47])
 
@@ -51,10 +51,6 @@ class RGBSegmentation(object):
         rospy.sleep(0.01)
 
         # Segment RGB by Coloe
-        # lower_color = np.array([124, 72, 47]) # Specific values here for the pink wire?
-        # upper_color = np.array([179, 255, 255])
-        # hsv = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
-        # mask = cv2.inRange(hsv, lower_color, upper_color)
         mask = self.segment_rgb(self.lower_color, self.upper_color, cv_image)
 
         # cv2.imshow('sample imagsdfe',cv_image)
