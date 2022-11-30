@@ -18,20 +18,27 @@ from wire_modeling_msgs.srv import ProcessPointCloud, ProcessPointCloudResponse
 
 
 def sort_points(points,end_point):
-    elements = []
-    elements.append(end_point)
+    """
+    Function to sort a collection of points, given an array of points and an end point.
 
+    Arguments:
+        points : Array
+        end_point : 
+    Returns:
+        sorted_points : 
+    """
+    elements = [end_point]
     sorted_points = np.zeros((len(points), 3))
     sorted_points[0,:] = points[int(end_point),:]
 
     for i in range(len(points) - 1):
         min_dist = 5
         for j in range(len(points)):
-            compare = True
+            compare_flag = True
             for ele in elements:
                 if j == ele:
-                    compare = False
-            if compare == True:
+                    compare_flag = False
+            if compare_flag:
                 dist = ((points[j,0] - sorted_points[i,0])**2 + (points[j,1] - sorted_points[i,1])**2 + (points[j,2] - sorted_points[i,2])**2 )**0.5
                 if dist < min_dist:
                     min_dist = dist
