@@ -17,15 +17,18 @@ from wire_modeling_msgs.srv import ProcessPointCloud, ProcessPointCloudResponse
 
 
 
-def sort_points(points,end_point):
+def sort_points(points : list, end_point) -> list:
     """
     Function to sort a collection of points, given an array of points and an end point.
 
     Arguments:
-        points : Array
+        points : list
+            A list containing the set of raw points.
         end_point : 
+            An individual point representing the end of the wire.
     Returns:
-        sorted_points : 
+        sorted_points : list
+            A list containing the set of points sorted.
     """
     elements = [end_point]
     sorted_points = np.zeros((len(points), 3))
@@ -35,8 +38,8 @@ def sort_points(points,end_point):
         min_dist = 5
         for j in range(len(points)):
             compare_flag = True
-            for ele in elements:
-                if j == ele:
+            for e in elements:
+                if j == e:
                     compare_flag = False
             if compare_flag:
                 dist = ((points[j,0] - sorted_points[i,0])**2 + (points[j,1] - sorted_points[i,1])**2 + (points[j,2] - sorted_points[i,2])**2 )**0.5
@@ -47,21 +50,39 @@ def sort_points(points,end_point):
         elements.append(element)
     return sorted_points
 
-def get_final_node_set(sorted_points,N):
-    # N = number of nodes
-    Wire = WireGraspToolbox(sorted_points)
-    
-    #curve_set = Bezier.Curve(t_points, sorted_points)
-    curve_set = Wire.BCurve()
+def get_final_node_set(sorted_points : list, node_count : int) -> list:
+    """
+    Function to return the final set of nodes based on the wire image and its Bezier curve.
 
-    final_node_set = np.zeros((N,3))
+    Arguments:
+        sorted_points : list
+            list of sorted points from above method.
+        node_count : int
+            Integer representing the total number of nodes.
+    Returns:
+        final_node_list : list
+            list containing processed set of nodes.
+    """
+    wire = WireGraspToolbox(sorted_points)
+    curve_set = wire.BCurve()
+    final_node_set = np.zeros((node_count,3))
 
-    for i in range(N):
+    for i in range(node_count):
         final_node_set[[i],:] = curve_set[[i*5],:]
 
     return final_node_set 
 
-def get_wire_length(points):
+def get_wire_length(points : list) -> int:
+    """
+    Calculates the total length of the wire given a set of points.
+
+    Arguments:
+        points : list
+            list of points used in calculating the total length of wire.
+    Returns:
+        length : int
+            An integer representing the total length of the wire.
+    """
     length = 0
     for i in range(len(points)-1):
         length = length + ((points[i,0] - points[i+1,0])**2 + (points[i,1] - points[i+1,1])**2 + (points[i,2] - points[i+1,2])**2 )**0.5
@@ -74,7 +95,7 @@ def process_point_cloud(req):
     pc = ros_numpy.numpify(req.pointcloud)
     points=np.zeros((len(pc)*len(pc[0]),3))
     count = 0
-    N = 20
+    node_count = 20
 
     translation = np.array([0, 0, 0])
 
@@ -92,7 +113,7 @@ def process_point_cloud(req):
     points_ = points[0:(count-1), :]
 
     # cluster the point cloud data into N = 20 nodes
-    kmeans = KMeans(n_clusters=N)
+    kmeans = KMeans(n_clusters=node_count)
     kmeans.fit(points_)
     #print(kmeans.labels_)
     C = kmeans.cluster_centers_
@@ -101,9 +122,9 @@ def process_point_cloud(req):
     outliers = []
     threshold = 0.05 # a point whos closest neighbor is greater than 0.1m away is considered an outlier 
 
-    for k in range(N):
+    for k in range(node_count):
         min_dist = 5
-        for j in range(N):
+        for j in range(node_count):
             if k != j:
                 dist = ((C[k,0] - C[j,0])**2 + (C[k,1] - C[j,1])**2 + (C[k,2] - C[j,2])**2 )**0.5
                 if dist < min_dist:
@@ -117,10 +138,10 @@ def process_point_cloud(req):
     # reduce your array
     size_of_outliers = len(outliers)
     print('# of Outliers',size_of_outliers)
-    new_points = np.zeros((N-size_of_outliers,3))
+    new_points = np.zeros((node_count-size_of_outliers,3))
     j = 0
 
-    for i in range(N):
+    for i in range(node_count):
         remove = False
         for k in range(size_of_outliers):
             if i == outliers[k]:
@@ -200,7 +221,7 @@ def process_point_cloud(req):
         raw_points.poses.append(pose)
 
 
-    for i in range(N):
+    for i in range(node_count):
         pose = Pose()
         pose.position.x = final_node_set[i,0]
         pose.position.y = final_node_set[i,1]
