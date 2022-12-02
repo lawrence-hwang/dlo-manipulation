@@ -160,26 +160,33 @@ def process_outliers(C, node_count : int):
             j = j +1
     return new_points
 
+def transpose_camera_points(points : list) -> list:
+    """
+    TO DO: Automate this with tf2; currently transform the points from camera_color_optical_frame to camera_frame 
+    with rotation about x -90, rotation about y 90. 
+    Transformation from camera frame to world is pure translation -0.2286 0 0.4318
+    
+    Arguments:
+        points : list
+            List of processed points.
+    Returns:
+        list of transposed points.
+    """
+    result_points = points
+    angle = math.pi/2
+    ROT = rotm(-angle,angle,0)
+
+    for i in range(len(result_points)):
+        result_points[[i],:] = np.transpose(ROT@np.transpose(result_points[[i],:])) + np.array((-0.3556,0.015,0.4064))
+    return result_points
+
+
 def process_point_cloud(req):
     # Convert pointcloud into cluster of #node_count nodes
     node_count = 20
     C = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
     # Find and remove outliers 
-    new_points = process_outliers(C, node_count)
-
-    #TO DO:: Automate this with tf2
-    
-    # Transform the points from camera_color_optical_frame to camera_frame 
-    # rotation about x -90 
-    # rotation about y 90
-    # Transformation from camera frame to world is pure translation 
-    #-0.2286 0 0.4318
-
-    angle = math.pi/2
-    ROT = rotm(-angle,angle,0)
-
-    for i in range(len(new_points)):
-        new_points[[i],:] = np.transpose(ROT@np.transpose(new_points[[i],:])) + np.array((-0.3556,0.015,0.4064))
+    new_points = transpose_camera_points(process_outliers(C, node_count))
 
     # check the extreme points ( maz min x,y,z)
     # find the element with the most extreme values
