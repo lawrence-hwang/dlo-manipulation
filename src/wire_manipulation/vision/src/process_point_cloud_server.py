@@ -50,7 +50,7 @@ def sort_points(points : list, end_point) -> list:
         elements.append(element)
     return sorted_points
 
-def get_final_node_set(sorted_points : list, node_count : int) -> list:
+def process_bezier_curve(sorted_points : list, node_count : int) -> list:
     """
     Function to return the final set of nodes based on the wire image and its Bezier curve.
 
@@ -180,18 +180,20 @@ def transpose_camera_points(points : list) -> list:
         result_points[[i],:] = np.transpose(ROT@np.transpose(result_points[[i],:])) + np.array((-0.3556,0.015,0.4064))
     return result_points
 
-
-def process_point_cloud(req):
-    # Convert pointcloud into cluster of #node_count nodes
-    node_count = 20
-    C = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
-    # Find and remove outliers 
-    new_points = transpose_camera_points(process_outliers(C, node_count))
-
-    # check the extreme points ( maz min x,y,z)
-    # find the element with the most extreme values
-    # ex. element 6 might hold the max x and min z. Likley an end point
-    # use this point as a starting point
+def process_extrema_points(new_points : list):
+    """
+    Check the extreme points ( max min x,y,z) and find the element with the most extreme values.
+    ex. element 6 might hold the max x and min z. Likely an end point; use this point as a starting point
+    
+    Arguments:
+        new_points : list
+            List of processed, clustered and transposed points.
+    Returns:
+        end_point :
+            Determined wire endpoint.
+        wire_class : str
+            Determined type of the wire, either type1 being vertical or type2 being horizontal.
+    """
     min_y = max_y = new_points[0,1]
     min_z = max_z = new_points[0,2]
     extrema_elements = np.zeros(4) # [min_y, max_y, min_z, max_z]
@@ -216,20 +218,32 @@ def process_point_cloud(req):
     if distance_between_z_extrema > distance_between_y_extrema:
         end_point = int(extrema_elements[2])
         print("end point is in Z", new_points[end_point])
-        wire_class = "type1" # wire is mostly verticle
+        wire_class = "type1" # wire is mostly vertical
     else:
         end_point = int(extrema_elements[0])
         print("end point is in Y", new_points[end_point])
-        wire_class = "type2" # wire is mostyl horizontal 
+        wire_class = "type2" # wire is mostly horizontal 
+    return end_point, wire_class
 
-    # sort the points 
-    sorted_points = sort_points(new_points,end_point)
+def process_sorted_points(node_count : int, sorted_points : list, final_node_set : list):
+    """
+    Process lists of sorted points and list of final set of nodes to obtain array for poses, markers, and raw points.
 
-
-    # fit bezier curve 
-    final_node_set = get_final_node_set(sorted_points,20)
-
-
+    Arguments:
+        node_count : int
+            Integer representing number of nodes.
+        sorted_points : list
+            List of sorted points.
+        final_node_set : list
+            List of final nodes post filtering.
+    Returns:
+        pose_array : PoseArray
+            Array representing position of wire.
+        markers : MarkerArray
+            Array representing markers of wire.
+        raw_points : PoseArray
+            Array representing the raw points of the array.
+    """
     pose_array = PoseArray()
     markers = MarkerArray()
     raw_points = PoseArray()
@@ -284,12 +298,32 @@ def process_point_cloud(req):
 
         markers.markers.append(marker_object)
 
+    return pose_array, markers, raw_points
+
+def process_point_cloud(req):
+    # Convert pointcloud into cluster of #node_count nodes
+    node_count = 20
+    clusters = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
+
+    # Find and remove outliers. Transpose for camera frame.
+    new_points = transpose_camera_points(process_outliers(clusters, node_count))
+
+    # Find extrema points and use to determine the type of wire and endpoint.
+    end_point, wire_class = process_extrema_points(new_points)
+
+    # Sort the points 
+    sorted_points = sort_points(new_points,end_point)
+
+    # Fit the Bezier curve 
+    final_node_set = process_bezier_curve(sorted_points,20)
+
+    # Final processing before publishing. Create poses, raw points, and markers.
+    pose_array, markers, raw_points = process_sorted_points(node_count, sorted_points, final_node_set)
+
     marker_.publish(markers)
     wire_length = get_wire_length(final_node_set)
 
-    
-    return ProcessPointCloudResponse(pose = pose_array, wire_length = wire_length, raw_points = raw_points, wire_class = wire_class)
-    
+    return ProcessPointCloudResponse(pose = pose_array, wire_length = wire_length, raw_points = raw_points, wire_class = wire_class)    
  
 if __name__ == "__main__":
     rospy.init_node('process_point_cloud_server')
