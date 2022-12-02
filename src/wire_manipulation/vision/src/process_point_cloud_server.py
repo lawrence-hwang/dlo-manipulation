@@ -320,6 +320,7 @@ def process_point_cloud(req):
     # Final processing before publishing. Create poses, raw points, and markers.
     pose_array, markers, raw_points = process_sorted_points(node_count, sorted_points, final_node_set)
 
+    # Publish to other components, return a ProcessPointCloudResponse object with pose, wire_length, raw_points, and wire_class
     marker_.publish(markers)
     wire_length = get_wire_length(final_node_set)
 
