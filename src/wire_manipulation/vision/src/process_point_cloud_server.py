@@ -89,34 +89,33 @@ def get_wire_length(points : list) -> int:
 
     return length
 
-
-def process_point_cloud(req):
-    # points are in camera_color_optical_frame
-    pc = ros_numpy.numpify(req.pointcloud)
-    points=np.zeros((len(pc)*len(pc[0]),3))
-    count = 0
-    node_count = 20
-
-    translation = np.array([0, 0, 0])
-
+def process_clusters(pc, count : int, node_count : int) -> list:
     # format the processed pointcloud into a N x 3 numpy array
+    """
+    Formats the processed pointcloud into a N x 3 Numpy array, and extract only non-zero elements.
+    Use the processed array to return the point cloud data clusered around the node count.
+
+    Arguments:
+    Returns:
+    """
+    points = np.zeros((len(pc)*len(pc[0]),3))
     for x in range(len(pc)):
         for y in range(len(pc[0])):
-            points2 = pc[x,y]
-            PP = [points2[0],points2[1],points2[2]]
-            if not math.isnan(points2[1]):
-                # transform the points into the world frame
-                points[count] = [points2[0],points2[1],points2[2]] + translation  
+            points_processed = pc[x,y]
+            if not math.isnan(points_processed[1]):
+                # Transform the points into the world frame
+                points[count] = [points_processed[0],points_processed[1],points_processed[2]] + np.array([0, 0, 0])  
                 count = count + 1
 
-    # After "count" all elements should be zero. Extract only non-zero elements
-    points_ = points[0:(count-1), :]
-
-    # cluster the point cloud data into N = 20 nodes
+    # Cluster the point cloud data into node_count nodes
     kmeans = KMeans(n_clusters=node_count)
-    kmeans.fit(points_)
-    #print(kmeans.labels_)
-    C = kmeans.cluster_centers_
+    kmeans.fit(points[0:(count-1), :])
+    return kmeans.cluster_centers_
+
+def process_point_cloud(req):
+    # Convert pointcloud into cluster of #node_count nodes
+    node_count = 20
+    C = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
 
     # Find outliers 
     outliers = []
