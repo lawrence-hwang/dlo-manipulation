@@ -96,7 +96,15 @@ def process_clusters(pc, count : int, node_count : int) -> list:
     Use the processed array to return the point cloud data clusered around the node count.
 
     Arguments:
+        pc :
+            Pointcloud
+        count : int
+            Count of transformations
+        node_count : int
+            Count of how many nodes to cluster.
     Returns:
+        kmeans.cluster_centers_ : 
+            Clustered point cloud
     """
     points = np.zeros((len(pc)*len(pc[0]),3))
     for x in range(len(pc)):
@@ -112,15 +120,21 @@ def process_clusters(pc, count : int, node_count : int) -> list:
     kmeans.fit(points[0:(count-1), :])
     return kmeans.cluster_centers_
 
-def process_point_cloud(req):
-    # Convert pointcloud into cluster of #node_count nodes
-    node_count = 20
-    C = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
+def process_outliers(C, node_count : int):
+    """
+    Function to find and remove outliers from the clustered point cloud.
 
-    # Find outliers 
+    Arguments:
+        C : 
+        node_count : int
+            Count of how many nodes to cluster.
+    Returns:
+        new_points : 
+            List of points with outliers removed. 
+    """
+    # Compile list of outliers based on condition min_dist
     outliers = []
-    threshold = 0.05 # a point whos closest neighbor is greater than 0.1m away is considered an outlier 
-
+    threshold = 0.05 # A point whos closest neighbor is greater than 0.1m away is considered an outlier 
     for k in range(node_count):
         min_dist = 5
         for j in range(node_count):
@@ -128,27 +142,30 @@ def process_point_cloud(req):
                 dist = ((C[k,0] - C[j,0])**2 + (C[k,1] - C[j,1])**2 + (C[k,2] - C[j,2])**2 )**0.5
                 if dist < min_dist:
                     min_dist = dist
-            
-        # check outlier condition    
+        # Check outlier condition    
         if min_dist > threshold: 
             outliers.append(k)
-        
-    # Get rid of outliers 
-    # reduce your array
+    # Remove outliers and return filtered clustered pointcloud
     size_of_outliers = len(outliers)
-    print('# of Outliers',size_of_outliers)
+    # print('# of Outliers',size_of_outliers)
     new_points = np.zeros((node_count-size_of_outliers,3))
     j = 0
-
     for i in range(node_count):
         remove = False
         for k in range(size_of_outliers):
             if i == outliers[k]:
                 remove = True
-        if(remove != True):
+        if not remove:
             new_points[[j],:] = C[[i],:]
             j = j +1
+    return new_points
 
+def process_point_cloud(req):
+    # Convert pointcloud into cluster of #node_count nodes
+    node_count = 20
+    C = process_clusters(ros_numpy.numpify(req.pointcloud), 0, node_count)
+    # Find and remove outliers 
+    new_points = process_outliers(C, node_count)
 
     #TO DO:: Automate this with tf2
     
