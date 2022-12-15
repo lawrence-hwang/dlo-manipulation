@@ -46,7 +46,8 @@ class RobotControl:
 
     def _sleep_all(self) -> None:
         '''
-        Sleep both arms and grippers.
+        Method to sleep both arms and open grippers. 
+        Set base state before performing actions, method used before and after execution.
         
         Arguments:
             - None
