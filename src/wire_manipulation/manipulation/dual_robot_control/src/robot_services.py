@@ -74,10 +74,27 @@ class RobotControl:
             self.left_gripper.execute(l_open_gripper)
         else:
             sys.exit()
-        
-    def grasp_object_callback(self,req):
 
-        # insert Grasp Object in Scene 
+    def get_arm_move_group(self, req):
+        """
+        Given a req object, returns the arm to use.
+
+        Arguments:
+            req : 
+        Returns:
+            
+        """
+        return self.left_arm if req.robot == "left" else self.right_arm
+
+    def add_grasp_object(self, req) -> None:
+        """
+        Insert a grasp object (default square box) into the scene.
+
+        Arguments:
+            req : 
+        Returns:
+            None
+        """
         self.grasp_object_name = "grasp_object"
         box_pose = geometry_msgs.msg.PoseStamped()
         box_pose.header.frame_id = "world"
@@ -86,12 +103,21 @@ class RobotControl:
         box_pose.pose.position.y = req.object_grasp_pose.position.y  
         box_pose.pose.position.z = req.object_grasp_pose.position.z  
         self.scene.add_box(self.grasp_object_name, box_pose, size=(0.025, 0.025, 0.025))
+        
+    def grasp_object_callback(self, req) -> None:
+        """
+        Callback that finds the grasp object, picks it up, then sleeps.
+
+        Arguments:
+            req : 
+        Returns:
+            None
+        """
+        # Insert Grasp Object in Scene 
+        self.add_grasp_object(req)
 
         # Get robot move_group
-        if(req.robot == "left"):
-            robot = self.left_arm
-        else:
-            robot = self.right_arm
+        robot = self.get_arm_move_group(req)
 
         # Set planning time
         robot.set_planning_time(5.0)
