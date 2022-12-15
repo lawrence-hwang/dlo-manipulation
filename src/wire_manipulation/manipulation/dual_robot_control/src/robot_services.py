@@ -201,13 +201,13 @@ class RobotControl:
         else:
             sys.exit()
 
-    def grasp_wire_callback(self,req):
+    def grasp_wire_callback(self, req):
+        """
+        
+        """
 
         # Determining which Robot will Grasp wire
-        if(req.robot == "left"):
-            robot = self.left_arm
-        else:
-            robot = self.right_arm
+        robot = self.get_arm_move_group(req)
 
         # Set planning time
         robot.set_planning_time(5.0)
