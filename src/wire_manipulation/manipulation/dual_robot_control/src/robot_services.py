@@ -19,6 +19,8 @@ class RobotControl:
 
         moveit_commander.roscpp_initialize(sys.argv)
         rospy.init_node('robot_control_server')
+
+        # Define scene and robot planner commander
         self.scene = moveit_commander.PlanningSceneInterface()
         self.robot = moveit_commander.RobotCommander()
         
