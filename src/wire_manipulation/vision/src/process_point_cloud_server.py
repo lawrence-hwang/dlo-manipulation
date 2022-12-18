@@ -321,7 +321,7 @@ def process_point_cloud(req):
     pose_array, markers, raw_points = process_sorted_points(node_count, sorted_points, final_node_set)
 
     # Publish to other components, return a ProcessPointCloudResponse object with pose, wire_length, raw_points, and wire_class
-    marker_.publish(markers)
+    marker_.publish(markers) # Publish markers of where wire is in model
     wire_length = get_wire_length(final_node_set)
 
     return ProcessPointCloudResponse(pose = pose_array, wire_length = wire_length, raw_points = raw_points, wire_class = wire_class)    
