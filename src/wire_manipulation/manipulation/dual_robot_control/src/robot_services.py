@@ -35,6 +35,7 @@ class RobotControl:
         self.grasp_wire_service_ = rospy.Service("grasp_wire_service", GraspWire, self.grasp_wire_callback)
         self.grasp_object_service_ = rospy.Service("grasp_object_service", GraspObject, self.grasp_object_callback)
 
+        # Set offsets for grasp
         self.pre_grasp_offset = 0.05
         self.post_grasp_offset = 0.02
         self.num_of_grasp = 0
@@ -187,7 +188,7 @@ class RobotControl:
         GraspObjectResponse(status = status)
         self.scene.remove_world_object(self.grasp_object_name)
 
-        
+        # Close the gripper around the wire once point found
         self.right_gripper.set_named_target("close")
         _, l_open_gripper, _, _ = self.right_gripper.plan()
         self.right_gripper.execute(l_open_gripper)
@@ -267,16 +268,22 @@ class RobotControl:
         (plan1, fraction) = robot.compute_cartesian_path(waypoints, 0.01, 0.0)  
         robot.execute(plan1, wait=True)
 
-        
-
         return GraspWireResponse(status = True)
 
 
     def create_grasp_repo(self,object_grasp_pose):
+        """
+        This function is hard-coded to grasp the cube in demo.
+
+        Arguments:
+            object_grasp_pose
+        Returns:
+            object_grasp_poses
+        """
 
         object_grasp_poses = geometry_msgs.msg.PoseArray()
 
-        ## Setting up Grasps for pick and place
+        # Setting up Grasps for pick and place
         grasps = [] 
 
         grasp1 = geometry_msgs.msg.Quaternion()
