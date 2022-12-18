@@ -204,7 +204,7 @@ class RobotControl:
 
     def grasp_wire_callback(self, req):
         """
-        
+        Callback to grasp the wire based on positions found from camera model calculation.
         """
 
         # Determining which Robot will Grasp wire
