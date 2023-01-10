@@ -59,24 +59,24 @@ CMakeFiles/dual_robot_msgs_generate_messages_cpp: /home/drojas/lawrence_wire/dev
 
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/dual_robot_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from dual_robot_msgs/GraspWire.srv"
-	cd /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs && /home/drojas/lawrence_wire/build/dual_robot_msgs/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
+	cd /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs && /home/drojas/lawrence_wire/build/dual_robot_msgs/catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspObject.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/dual_robot_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from dual_robot_msgs/GraspObject.srv"
-	cd /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs && /home/drojas/lawrence_wire/build/dual_robot_msgs/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
+	cd /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs && /home/drojas/lawrence_wire/build/dual_robot_msgs/catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 dual_robot_msgs_generate_messages_cpp: CMakeFiles/dual_robot_msgs_generate_messages_cpp
 dual_robot_msgs_generate_messages_cpp: /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/include/dual_robot_msgs/GraspWire.h

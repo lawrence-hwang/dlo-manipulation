@@ -23,12 +23,10 @@
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
-  <exec_depend>depth_image_proc</exec_depend>
   <exec_depend>image_transport</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-   <exec_depend>depth_image_proc</exec_depend>
    <exec_depend>pcl_ros</exec_depend>
    <exec_depend>ros_numpy</exec_depend>
    <exec_depend>realsense2_camera</exec_depend>
@@ -36,6 +34,7 @@
    <exec_depend>wire_modeling_msgs</exec_depend>
    <exec_depend>apriltag_ros</exec_depend>
 
+<depend>depth_image_proc</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

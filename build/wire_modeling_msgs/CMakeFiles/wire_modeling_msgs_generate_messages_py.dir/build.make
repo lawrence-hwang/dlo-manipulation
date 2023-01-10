@@ -59,20 +59,20 @@ CMakeFiles/wire_modeling_msgs_generate_messages_py: /home/drojas/lawrence_wire/d
 
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /home/drojas/lawrence_wire/src/wire_manipulation/wire_modeling_msgs/srv/ProcessPointCloud.srv
-/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
-/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseArray.msg
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseArray.msg
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/wire_modeling_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV wire_modeling_msgs/ProcessPointCloud"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/drojas/lawrence_wire/src/wire_manipulation/wire_modeling_msgs/srv/ProcessPointCloud.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p wire_modeling_msgs -o /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv
+	catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/drojas/lawrence_wire/src/wire_manipulation/wire_modeling_msgs/srv/ProcessPointCloud.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p wire_modeling_msgs -o /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv
 
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/__init__.py: /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/wire_modeling_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for wire_modeling_msgs"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv --initpy
+	catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv --initpy
 
 wire_modeling_msgs_generate_messages_py: CMakeFiles/wire_modeling_msgs_generate_messages_py
 wire_modeling_msgs_generate_messages_py: /home/drojas/lawrence_wire/devel/.private/wire_modeling_msgs/lib/python3/dist-packages/wire_modeling_msgs/srv/_ProcessPointCloud.py

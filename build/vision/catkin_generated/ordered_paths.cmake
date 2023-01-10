@@ -1,1 +1,1 @@
-set(ORDERED_PATHS "/home/drojas/lawrence_wire/devel/.private/depth_image_proc/lib;/opt/ros/noetic/lib")
+set(ORDERED_PATHS "/opt/ros/noetic/lib")

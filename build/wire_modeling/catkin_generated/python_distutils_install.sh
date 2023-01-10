@@ -24,7 +24,7 @@ echo_and_run mkdir -p "$DESTDIR/home/drojas/lawrence_wire/install/lib/python3/di
 echo_and_run /usr/bin/env \
     PYTHONPATH="/home/drojas/lawrence_wire/install/lib/python3/dist-packages:/home/drojas/lawrence_wire/build/wire_modeling/lib/python3/dist-packages:$PYTHONPATH" \
     CATKIN_BINARY_DIR="/home/drojas/lawrence_wire/build/wire_modeling" \
-    "/usr/bin/python3" \
+    "/home/drojas/lawrence_venv/bin/python3" \
     "/home/drojas/lawrence_wire/src/wire_manipulation/wire_modeling/setup.py" \
      \
     build --build-base "/home/drojas/lawrence_wire/build/wire_modeling" \

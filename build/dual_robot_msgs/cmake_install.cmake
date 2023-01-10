@@ -156,7 +156,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/lib/python3/dist-packages/dual_robot_msgs")
+  execute_process(COMMAND "/home/drojas/lawrence_venv/bin/python3" -m compileall "/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/lib/python3/dist-packages/dual_robot_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

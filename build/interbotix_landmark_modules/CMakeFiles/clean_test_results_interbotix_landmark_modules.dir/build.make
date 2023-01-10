@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/drojas/lawrence_wire/build/interbotix_landmark_modules
 include CMakeFiles/clean_test_results_interbotix_landmark_modules.dir/progress.make
 
 CMakeFiles/clean_test_results_interbotix_landmark_modules:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/drojas/lawrence_wire/build/interbotix_landmark_modules/test_results/interbotix_landmark_modules
+	/home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/drojas/lawrence_wire/build/interbotix_landmark_modules/test_results/interbotix_landmark_modules
 
 clean_test_results_interbotix_landmark_modules: CMakeFiles/clean_test_results_interbotix_landmark_modules
 clean_test_results_interbotix_landmark_modules: CMakeFiles/clean_test_results_interbotix_landmark_modules.dir/build.make

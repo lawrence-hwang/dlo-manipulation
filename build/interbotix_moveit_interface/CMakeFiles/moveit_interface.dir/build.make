@@ -149,6 +149,7 @@ moveit_interface_EXTERNAL_OBJECTS =
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /usr/lib/x86_64-linux-gnu/libccd.so
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /usr/lib/x86_64-linux-gnu/libm.so
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /opt/ros/noetic/lib/liboctomap.so.1.9.8
+/home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /opt/ros/noetic/lib/x86_64-linux-gnu/libruckig.so
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
 /home/drojas/lawrence_wire/devel/.private/interbotix_moveit_interface/lib/interbotix_moveit_interface/moveit_interface: /usr/lib/x86_64-linux-gnu/libBulletCollision.so

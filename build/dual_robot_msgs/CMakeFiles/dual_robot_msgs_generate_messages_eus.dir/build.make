@@ -60,24 +60,24 @@ CMakeFiles/dual_robot_msgs_generate_messages_eus: /home/drojas/lawrence_wire/dev
 
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/dual_robot_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from dual_robot_msgs/GraspWire.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv
+	catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv
 
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv
-/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspObject.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/dual_robot_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from dual_robot_msgs/GraspObject.srv"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv
+	catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p dual_robot_msgs -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv
 
 /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/drojas/lawrence_wire/build/dual_robot_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for dual_robot_msgs"
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs dual_robot_msgs std_msgs geometry_msgs
+	catkin_generated/env_cached.sh /home/drojas/lawrence_venv/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs dual_robot_msgs std_msgs geometry_msgs
 
 dual_robot_msgs_generate_messages_eus: CMakeFiles/dual_robot_msgs_generate_messages_eus
 dual_robot_msgs_generate_messages_eus: /home/drojas/lawrence_wire/devel/.private/dual_robot_msgs/share/roseus/ros/dual_robot_msgs/srv/GraspWire.l
