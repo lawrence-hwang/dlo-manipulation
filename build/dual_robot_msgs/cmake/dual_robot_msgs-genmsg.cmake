@@ -19,12 +19,12 @@ add_custom_target(dual_robot_msgs_generate_messages ALL)
 
 get_filename_component(_filename "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv" NAME_WE)
 add_custom_target(_dual_robot_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "dual_robot_msgs" "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv" "geometry_msgs/Vector3:geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/Pose"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "dual_robot_msgs" "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv" "geometry_msgs/Vector3:geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv" NAME_WE)
 add_custom_target(_dual_robot_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "dual_robot_msgs" "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv" "geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/Pose"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "dual_robot_msgs" "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
 #
@@ -38,13 +38,13 @@ add_custom_target(_dual_robot_msgs_generate_messages_check_deps_${_filename}
 _generate_srv_cpp(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/dual_robot_msgs
 )
 _generate_srv_cpp(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/dual_robot_msgs
 )
 
@@ -79,13 +79,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS dual_robot_msgs_generate_messages_c
 _generate_srv_eus(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/dual_robot_msgs
 )
 _generate_srv_eus(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/dual_robot_msgs
 )
 
@@ -120,13 +120,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS dual_robot_msgs_generate_messages_e
 _generate_srv_lisp(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/dual_robot_msgs
 )
 _generate_srv_lisp(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/dual_robot_msgs
 )
 
@@ -161,13 +161,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS dual_robot_msgs_generate_messages_l
 _generate_srv_nodejs(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/dual_robot_msgs
 )
 _generate_srv_nodejs(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/dual_robot_msgs
 )
 
@@ -202,13 +202,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS dual_robot_msgs_generate_messages_n
 _generate_srv_py(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspWire.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/dual_robot_msgs
 )
 _generate_srv_py(dual_robot_msgs
   "/home/drojas/lawrence_wire/src/wire_manipulation/manipulation/dual_robot_msgs/srv/GraspObject.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/dual_robot_msgs
 )
 

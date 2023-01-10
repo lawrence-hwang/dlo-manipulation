@@ -1,48 +1,48 @@
-[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
-[35m[1mScanning dependencies of target _dual_robot_msgs_generate_messages_check_deps_GraspWire[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
 [35m[1mScanning dependencies of target _dual_robot_msgs_generate_messages_check_deps_GraspObject[0m
-[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
-[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
-[  0%] Built target geometry_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
 [  0%] Built target std_msgs_generate_messages_eus
-[  0%] Built target geometry_msgs_generate_messages_lisp
-[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
-[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[  0%] Built target geometry_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target _dual_robot_msgs_generate_messages_check_deps_GraspWire[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
 [  0%] Built target std_msgs_generate_messages_cpp
-[  0%] Built target geometry_msgs_generate_messages_cpp
-[  0%] Built target std_msgs_generate_messages_lisp
-[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[  0%] Built target geometry_msgs_generate_messages_lisp
 [  0%] Built target _dual_robot_msgs_generate_messages_check_deps_GraspObject
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
 [  0%] Built target _dual_robot_msgs_generate_messages_check_deps_GraspWire
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_nodejs
 [35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
 [  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_py
 [35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[  0%] Built target std_msgs_generate_messages_py
 [35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_eus[0m
-[  0%] Built target geometry_msgs_generate_messages_nodejs
 [  8%] [34m[1mGenerating EusLisp code from dual_robot_msgs/GraspWire.srv[0m
-[35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_cpp[0m
-[  8%] Built target std_msgs_generate_messages_py
-[35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_lisp[0m
 [ 16%] [34m[1mGenerating EusLisp code from dual_robot_msgs/GraspObject.srv[0m
-[ 16%] Built target geometry_msgs_generate_messages_py
+[ 25%] [34m[1mGenerating EusLisp manifest code for dual_robot_msgs[0m
+[35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_cpp[0m
 [ 33%] [34m[1mGenerating C++ code from dual_robot_msgs/GraspWire.srv[0m
-[ 33%] [34m[1mGenerating C++ code from dual_robot_msgs/GraspObject.srv[0m
-[ 41%] [34m[1mGenerating Lisp code from dual_robot_msgs/GraspWire.srv[0m
-[ 50%] [34m[1mGenerating EusLisp manifest code for dual_robot_msgs[0m
+[35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_lisp[0m
 [35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_nodejs[0m
-[ 58%] [34m[1mGenerating Javascript code from dual_robot_msgs/GraspWire.srv[0m
+[ 41%] [34m[1mGenerating Lisp code from dual_robot_msgs/GraspWire.srv[0m
+[ 50%] [34m[1mGenerating Javascript code from dual_robot_msgs/GraspWire.srv[0m
+[ 58%] [34m[1mGenerating Javascript code from dual_robot_msgs/GraspObject.srv[0m
 [ 66%] [34m[1mGenerating Lisp code from dual_robot_msgs/GraspObject.srv[0m
-[ 75%] [34m[1mGenerating Javascript code from dual_robot_msgs/GraspObject.srv[0m
+[ 75%] [34m[1mGenerating C++ code from dual_robot_msgs/GraspObject.srv[0m
+[ 75%] Built target dual_robot_msgs_generate_messages_nodejs
+[ 75%] Built target dual_robot_msgs_generate_messages_lisp
+[ 75%] Built target dual_robot_msgs_generate_messages_eus
 [35m[1mScanning dependencies of target dual_robot_msgs_generate_messages_py[0m
 [ 83%] [34m[1mGenerating Python code from SRV dual_robot_msgs/GraspWire[0m
 [ 91%] [34m[1mGenerating Python code from SRV dual_robot_msgs/GraspObject[0m
-[ 91%] Built target dual_robot_msgs_generate_messages_lisp
-[ 91%] Built target dual_robot_msgs_generate_messages_nodejs
 [ 91%] Built target dual_robot_msgs_generate_messages_cpp
 [100%] [34m[1mGenerating Python srv __init__.py for dual_robot_msgs[0m
-[100%] Built target dual_robot_msgs_generate_messages_eus
 [100%] Built target dual_robot_msgs_generate_messages_py
 [35m[1mScanning dependencies of target dual_robot_msgs_generate_messages[0m
 [100%] Built target dual_robot_msgs_generate_messages
