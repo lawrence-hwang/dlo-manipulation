@@ -1,2 +1,0 @@
-image_pipeline/image_pipeline
-/home/drojas/lawrence_wire/devel/.private/image_pipeline/cmake.lock /home/drojas/lawrence_wire/devel/./cmake.lock

@@ -1,1 +1,0 @@
-/home/drojas/lawrence_wire/devel/.private/image_view/include/image_view/ImageViewConfig.h

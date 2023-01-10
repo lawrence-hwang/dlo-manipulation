@@ -1,1 +1,0 @@
-/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/lib/python3/dist-packages/stereo_image_proc/cfg/DisparityConfig.py

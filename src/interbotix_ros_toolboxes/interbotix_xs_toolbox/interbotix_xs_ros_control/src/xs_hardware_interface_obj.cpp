@@ -33,11 +33,13 @@ void XSHardwareInterface::init()
   srv_robot_info.call(group_info_srv);
   srv_robot_info.call(gripper_info_srv);
 
-  num_joints = group_info_srv.response.num_joints;
+  num_joints = group_info_srv.response.num_joints + 1;
   joint_state_indices = group_info_srv.response.joint_state_indices;
   joint_state_indices.push_back(gripper_info_srv.response.joint_state_indices.at(0));
   std::vector<std::string> joint_names = group_info_srv.response.joint_names;
   joint_names.push_back(gripper_info_srv.response.joint_names.at(0));
+
+  std::cout << gripper_info_srv.response.joint_names.at(0) <<"**********************" << std::endl;
 
   // Resize vectors
   joint_positions.resize(num_joints);
@@ -70,6 +72,9 @@ void XSHardwareInterface::init()
   // Initialize Controller
   for (int i = 0; i < num_joints; ++i) {
      // Create joint state interface
+
+      std::cout << prefix + joint_names.at(i) << "********\n"<<std::endl;
+
     hardware_interface::JointStateHandle jointStateHandle(prefix + joint_names.at(i), &joint_positions.at(i), &joint_velocities.at(i), &joint_efforts.at(i));
     joint_state_interface.registerHandle(jointStateHandle);
 

@@ -29,7 +29,7 @@ add_custom_target(_interbotix_xs_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg" NAME_WE)
 add_custom_target(_interbotix_xs_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "interbotix_xs_msgs" "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg" "std_msgs/Header:trajectory_msgs/JointTrajectoryPoint:trajectory_msgs/JointTrajectory"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "interbotix_xs_msgs" "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg" "trajectory_msgs/JointTrajectoryPoint:trajectory_msgs/JointTrajectory:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTemps.msg" NAME_WE)
@@ -108,7 +108,7 @@ _generate_msg_cpp(interbotix_xs_msgs
 _generate_msg_cpp(interbotix_xs_msgs
   "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg"
+  "/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/interbotix_xs_msgs
 )
 _generate_msg_cpp(interbotix_xs_msgs
@@ -245,7 +245,7 @@ _generate_msg_eus(interbotix_xs_msgs
 _generate_msg_eus(interbotix_xs_msgs
   "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg"
+  "/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/interbotix_xs_msgs
 )
 _generate_msg_eus(interbotix_xs_msgs
@@ -382,7 +382,7 @@ _generate_msg_lisp(interbotix_xs_msgs
 _generate_msg_lisp(interbotix_xs_msgs
   "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg"
+  "/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/interbotix_xs_msgs
 )
 _generate_msg_lisp(interbotix_xs_msgs
@@ -519,7 +519,7 @@ _generate_msg_nodejs(interbotix_xs_msgs
 _generate_msg_nodejs(interbotix_xs_msgs
   "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg"
+  "/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/interbotix_xs_msgs
 )
 _generate_msg_nodejs(interbotix_xs_msgs
@@ -656,7 +656,7 @@ _generate_msg_py(interbotix_xs_msgs
 _generate_msg_py(interbotix_xs_msgs
   "/home/drojas/lawrence_wire/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs/msg/JointTrajectoryCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg"
+  "/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectoryPoint.msg;/opt/ros/noetic/share/trajectory_msgs/cmake/../msg/JointTrajectory.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/interbotix_xs_msgs
 )
 _generate_msg_py(interbotix_xs_msgs
@@ -847,7 +847,7 @@ if(TARGET geometry_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/interbotix_xs_msgs)
-  install(CODE "execute_process(COMMAND \"/usr/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/interbotix_xs_msgs\")")
+  install(CODE "execute_process(COMMAND \"/home/drojas/lawrence_venv/bin/python3\" -m compileall \"${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/interbotix_xs_msgs\")")
   # install generated code
   install(
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/interbotix_xs_msgs
