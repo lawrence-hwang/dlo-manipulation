@@ -110,6 +110,10 @@ interbotix_xs_msgs/RobotInfo.h
 sensor_msgs/JointState.h
 -
 
+/home/drojas/lawrence_wire/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control/src/xs_hardware_interface.cpp
+interbotix_xs_ros_control/xs_hardware_interface_obj.h
+/home/drojas/lawrence_wire/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control/src/interbotix_xs_ros_control/xs_hardware_interface_obj.h
+
 /home/drojas/lawrence_wire/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control/src/xs_hardware_interface_obj.cpp
 interbotix_xs_ros_control/xs_hardware_interface_obj.h
 /home/drojas/lawrence_wire/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control/src/interbotix_xs_ros_control/xs_hardware_interface_obj.h

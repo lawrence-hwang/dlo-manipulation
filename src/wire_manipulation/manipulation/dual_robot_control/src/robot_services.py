@@ -19,6 +19,8 @@ class RobotControl:
 
         moveit_commander.roscpp_initialize(sys.argv)
         rospy.init_node('robot_control_server')
+
+        # Define scene and robot planner commander
         self.scene = moveit_commander.PlanningSceneInterface()
         self.robot = moveit_commander.RobotCommander()
         
@@ -33,6 +35,7 @@ class RobotControl:
         self.grasp_wire_service_ = rospy.Service("grasp_wire_service", GraspWire, self.grasp_wire_callback)
         self.grasp_object_service_ = rospy.Service("grasp_object_service", GraspObject, self.grasp_object_callback)
 
+        # Set offsets for grasp
         self.pre_grasp_offset = 0.05
         self.post_grasp_offset = 0.02
         self.num_of_grasp = 0
@@ -44,7 +47,8 @@ class RobotControl:
 
     def _sleep_all(self) -> None:
         '''
-        Sleep both arms and grippers.
+        Method to sleep both arms and open grippers. 
+        Set base state before performing actions, method used before and after execution.
         
         Arguments:
             - None
@@ -71,10 +75,27 @@ class RobotControl:
             self.left_gripper.execute(l_open_gripper)
         else:
             sys.exit()
-        
-    def grasp_object_callback(self,req):
 
-        # insert Grasp Object in Scene 
+    def get_arm_move_group(self, req):
+        """
+        Given a req object, returns the arm to use.
+
+        Arguments:
+            req : 
+        Returns:
+            
+        """
+        return self.left_arm if req.robot == "left" else self.right_arm
+
+    def add_grasp_object(self, req) -> None:
+        """
+        Insert a grasp object (default square box) into the scene.
+
+        Arguments:
+            req : 
+        Returns:
+            None
+        """
         self.grasp_object_name = "grasp_object"
         box_pose = geometry_msgs.msg.PoseStamped()
         box_pose.header.frame_id = "world"
@@ -83,12 +104,21 @@ class RobotControl:
         box_pose.pose.position.y = req.object_grasp_pose.position.y  
         box_pose.pose.position.z = req.object_grasp_pose.position.z  
         self.scene.add_box(self.grasp_object_name, box_pose, size=(0.025, 0.025, 0.025))
+        
+    def grasp_object_callback(self, req) -> None:
+        """
+        Callback that finds the grasp object, picks it up, then sleeps.
+
+        Arguments:
+            req : 
+        Returns:
+            None
+        """
+        # Insert Grasp Object in Scene 
+        self.add_grasp_object(req)
 
         # Get robot move_group
-        if(req.robot == "left"):
-            robot = self.left_arm
-        else:
-            robot = self.right_arm
+        robot = self.get_arm_move_group(req)
 
         # Set planning time
         robot.set_planning_time(5.0)
@@ -158,7 +188,7 @@ class RobotControl:
         GraspObjectResponse(status = status)
         self.scene.remove_world_object(self.grasp_object_name)
 
-        
+        # Close the gripper around the wire once point found
         self.right_gripper.set_named_target("close")
         _, l_open_gripper, _, _ = self.right_gripper.plan()
         self.right_gripper.execute(l_open_gripper)
@@ -172,13 +202,13 @@ class RobotControl:
         else:
             sys.exit()
 
-    def grasp_wire_callback(self,req):
+    def grasp_wire_callback(self, req):
+        """
+        Callback to grasp the wire based on positions found from camera model calculation.
+        """
 
         # Determining which Robot will Grasp wire
-        if(req.robot == "left"):
-            robot = self.left_arm
-        else:
-            robot = self.right_arm
+        robot = self.get_arm_move_group(req)
 
         # Set planning time
         robot.set_planning_time(5.0)
@@ -238,16 +268,22 @@ class RobotControl:
         (plan1, fraction) = robot.compute_cartesian_path(waypoints, 0.01, 0.0)  
         robot.execute(plan1, wait=True)
 
-        
-
         return GraspWireResponse(status = True)
 
 
     def create_grasp_repo(self,object_grasp_pose):
+        """
+        This function is hard-coded to grasp the cube in demo.
+
+        Arguments:
+            object_grasp_pose
+        Returns:
+            object_grasp_poses
+        """
 
         object_grasp_poses = geometry_msgs.msg.PoseArray()
 
-        ## Setting up Grasps for pick and place
+        # Setting up Grasps for pick and place
         grasps = [] 
 
         grasp1 = geometry_msgs.msg.Quaternion()
