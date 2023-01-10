@@ -1,4 +1,4 @@
-Linked: (/home/drojas/lawrence_wire/devel/.private/wire_modeling/share/wire_modeling/cmake/wire_modelingConfig-version.cmake, /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig-version.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/wire_modeling/share/wire_modeling/cmake/wire_modelingConfig.cmake, /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/wire_modeling/lib/pkgconfig/wire_modeling.pc, /home/drojas/lawrence_wire/devel/lib/pkgconfig/wire_modeling.pc)
-Linked: (/home/drojas/lawrence_wire/devel/.private/wire_modeling/lib/python3/dist-packages/wire_modeling/__init__.py, /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/wire_modeling/__init__.py)
+Symlinking /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/wire_modeling/cmake/wire_modelingConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/wire_modeling.pc
+Symlinking /home/drojas/lawrence_wire/devel/lib/python3/dist-packages/wire_modeling/__init__.py
