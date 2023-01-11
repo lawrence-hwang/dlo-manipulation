@@ -332,3 +332,4 @@ if __name__ == "__main__":
     s = rospy.Service('process_point_cloud', ProcessPointCloud, process_point_cloud)
     print("Process PointCloud Server is now running")
     rospy.spin()
+    
