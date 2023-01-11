@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # import rospy
 # import ros_numpy
-import numpy as np
-from numpy import linalg as la
-import math, json
+# import numpy as np
+# from numpy import linalg as la
+# import math
+import json
+from datetime import datetime
 
 # from geometry_msgs.msg import PoseArray
 # from geometry_msgs.msg import Pose
@@ -17,15 +19,16 @@ import math, json
 
 class JSONOutput():
     def __init__(self):
-        pass
+        self.json_result = None
         # Create subscribers here for what to export? Talk to Christopher
 
-    def get_dict(self, obj):
-        pass
-        # take information and convert it to a dict or other JSON acceptable form here
+    def convert_json_format(self, obj):
+        # Perform obj conversion to JSON acceptable form here
+        self.json_result = obj
 
-    def get_json(self, dict):
-        return json.dump(dict)
+    def export_json(self):
+        with open("sample.json", "w") as outfile:
+            json.dump(self.json_result, outfile)
 
 if __name__ == "__main__":
     # rospy.init_node('process_point_cloud_server')
