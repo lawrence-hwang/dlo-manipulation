@@ -3,14 +3,21 @@
 import json
 from datetime import datetime
 
-class JSONOutput():
-    def __init__(self):
+class JSONOutput:
+    def __init__(self, obj):
+        self.obj_to_format = obj
         self.json_result = None
+
         # Create subscribers here for what to export? Talk to Christopher
 
     def convert_json_format(self, obj):
+        conv_obj = obj
         # Perform obj conversion to JSON acceptable form here
-        self.json_result = obj
+
+        
+        self.json_result = conv_obj
+        # Return formatted obj
+        return self.json_result
 
     def export_json(self):
         datetime_str = (datetime.now()).strftime("%d-%m-%Y_%H-%M-%S")
