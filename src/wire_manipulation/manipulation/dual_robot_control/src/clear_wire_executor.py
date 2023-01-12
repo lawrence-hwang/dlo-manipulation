@@ -158,10 +158,12 @@ if __name__ == "__main__":
         object_grasp_pose.position.z = float(gop[2])
 
         #Task Executor
-        if(wire_grasping_robot == "left"):
+        print("wire_grasping_robot =", wire_grasping_robot)
+        if(wire_grasping_robot == "left"): # wire grasping hand should be right
             object_grasping_robot = "right"
         else:
-            object_grasping_robot = "left"
+            wire_grasping_robot = "left"
+            object_grasping_robot = "right"
 
         #grasp wire
         status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec)
