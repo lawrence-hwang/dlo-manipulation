@@ -14,7 +14,7 @@ class JSONOutput:
         conv_obj = obj
         # Perform obj conversion to JSON acceptable form here
 
-        
+
         self.json_result = conv_obj
         # Return formatted obj
         return self.json_result
@@ -24,6 +24,8 @@ class JSONOutput:
         formatted_filename = "arm-trajectories_" + datetime_str + ".json"
         with open(formatted_filename, "w") as outfile:
             json.dump(self.json_result, outfile)
+
+            # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
 
 # if __name__ == "__main__":
     # rospy.init_node('process_point_cloud_server')
