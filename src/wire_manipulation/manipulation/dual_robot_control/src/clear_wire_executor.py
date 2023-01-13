@@ -10,6 +10,7 @@ from wire_modeling.wire_sim import Collisions,TargetObject,WireModel,WireSim
 from wire_modeling_msgs.srv import *
 from dual_robot_msgs.srv import *
 from wire_modeling.wire_grasp_toolbox import WireGraspToolbox
+from wire_modeling.json_output import JSONOutput
 
 #python
 import numpy as np
@@ -32,11 +33,15 @@ def process_point_cloud_client(points):
          print("Service call failed: %s"%e)
 
 # Client call to grasp and move wire 
-def grasp_wire(robot_,wire_grasp_pose,pull_vec):
+def grasp_wire(robot_,wire_grasp_pose,pull_vec,json):
      rospy.wait_for_service('grasp_wire_service')
      try:
          grasp_wire_input = rospy.ServiceProxy('grasp_wire_service', GraspWire)
          response = grasp_wire_input(robot_,wire_grasp_pose,pull_vec)
+
+         # JSON exporting
+         json.convert_json_format(robot_, wire_grasp_pose)
+
          return response
      except rospy.ServiceException as e:
          print("Service call failed: %s"%e)
@@ -164,9 +169,12 @@ if __name__ == "__main__":
         else:
             wire_grasping_robot = "left"
             object_grasping_robot = "right"
+        
+        # Create JSON exporter
+        json_export = JSONOutput()
 
         #grasp wire
-        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec)
+        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, json_export)
 
         #grasp target
         status = grasp_target(object_grasping_robot,object_grasp_pose)

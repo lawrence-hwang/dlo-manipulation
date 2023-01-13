@@ -4,19 +4,20 @@ import json
 from datetime import datetime
 
 class JSONOutput:
-    def __init__(self, obj):
-        self.obj_to_format = obj
+    def __init__(self):
+        # self.obj_to_format = obj
         self.json_result = None
 
         # Create subscribers here for what to export? Talk to Christopher
 
-    def convert_json_format(self, obj):
-        conv_obj = obj
+    def convert_json_format(self, id, wire_grasp_pose):
+        # conv_obj = obj
         # Perform obj conversion to JSON acceptable form here
 
 
-        self.json_result = conv_obj
+        # self.json_result = conv_obj
         # Return formatted obj
+        print("VISION JSON OUTPUT IMPORTED")
         return self.json_result
 
     def export_json(self):
