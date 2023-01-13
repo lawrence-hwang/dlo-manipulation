@@ -34,14 +34,14 @@ def process_point_cloud_client(points):
          print("Service call failed: %s"%e)
 
 # Client call to grasp and move wire 
-def grasp_wire(robot_,wire_grasp_pose,pull_vec,json):
+def grasp_wire(robot_, wire_grasp_pose, pull_vec, json, time):
      rospy.wait_for_service('grasp_wire_service')
      try:
          grasp_wire_input = rospy.ServiceProxy('grasp_wire_service', GraspWire)
          response = grasp_wire_input(robot_,wire_grasp_pose,pull_vec)
 
          # JSON exporting
-         json.add_waypoint(robot_, wire_grasp_pose)
+         json.add_waypoint(robot_, wire_grasp_pose, time)
 
          return response
      except rospy.ServiceException as e:
@@ -61,6 +61,8 @@ def grasp_target(robot_,object_grasp_pose):
 #*** Node Starts Here ***#
 if __name__ == "__main__":
     start_time = process_time()
+    # Create JSON exporter
+    json_export = JSONOutput()
 
     rospy.init_node('listener', anonymous=True)
     topic = "/rscamera/depth/points"
@@ -172,9 +174,6 @@ if __name__ == "__main__":
         else:
             wire_grasping_robot = "left"
             object_grasping_robot = "right"
-        
-        # Create JSON exporter
-        json_export = JSONOutput()
 
         #grasp wire
         status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, json_export, process_time()-start_time)
@@ -182,5 +181,6 @@ if __name__ == "__main__":
         #grasp target
         status = grasp_target(object_grasping_robot,object_grasp_pose)
         
+    json_export.export_json()
     rospy.spin()
     # moveit_commander.roscpp_shutdown()

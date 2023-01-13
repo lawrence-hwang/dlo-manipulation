@@ -54,8 +54,9 @@ class JSONOutput:
     def export_json(self):
         datetime_str = (datetime.now()).strftime("%d-%m-%Y_%H-%M-%S")
         formatted_filename = "arm-trajectories_" + datetime_str + ".json"
+        file_format = json.dumps(self.json_dict)
         with open(formatted_filename, "w") as outfile:
-            json.dump(self.json_result, outfile)
+            json.dump(file_format, outfile, indent=4)
 
             # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
 
