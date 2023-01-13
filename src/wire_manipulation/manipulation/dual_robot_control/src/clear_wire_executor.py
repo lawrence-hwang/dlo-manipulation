@@ -2,8 +2,9 @@
 
 #ROS
 import rospy
-from sensor_msgs.msg import PointCloud2
 import geometry_msgs.msg
+from sensor_msgs.msg import PointCloud2
+from time import process_time
 
 # custom libs
 from wire_modeling.wire_sim import Collisions,TargetObject,WireModel,WireSim
@@ -40,7 +41,7 @@ def grasp_wire(robot_,wire_grasp_pose,pull_vec,json):
          response = grasp_wire_input(robot_,wire_grasp_pose,pull_vec)
 
          # JSON exporting
-         json.convert_json_format(robot_, wire_grasp_pose)
+         json.add_waypoint(robot_, wire_grasp_pose)
 
          return response
      except rospy.ServiceException as e:
@@ -59,6 +60,8 @@ def grasp_target(robot_,object_grasp_pose):
 
 #*** Node Starts Here ***#
 if __name__ == "__main__":
+    start_time = process_time()
+
     rospy.init_node('listener', anonymous=True)
     topic = "/rscamera/depth/points"
 
@@ -174,7 +177,7 @@ if __name__ == "__main__":
         json_export = JSONOutput()
 
         #grasp wire
-        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, json_export)
+        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, json_export, process_time()-start_time)
 
         #grasp target
         status = grasp_target(object_grasping_robot,object_grasp_pose)
