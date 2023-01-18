@@ -13,7 +13,9 @@ class JSONOutput:
     def __init__(self):
         self.json_dict = []
 
-        # Create subscribers here for what to export? Talk to Christopher
+        # Create subscribers to gather data for export
+        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/arm_controller/state")
+        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state")
 
     def id_in_json(self, id) -> int:
         # Return index of matching id in list of dictionaries
