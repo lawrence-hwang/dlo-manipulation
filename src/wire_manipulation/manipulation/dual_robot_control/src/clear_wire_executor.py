@@ -41,7 +41,7 @@ def grasp_wire(robot_, wire_grasp_pose, pull_vec, json, time):
          response = grasp_wire_input(robot_,wire_grasp_pose,pull_vec)
 
          # JSON exporting
-         json.add_waypoint(robot_, wire_grasp_pose, time)
+        #  json.add_waypoint(robot_, wire_grasp_pose, time)
 
          return response
      except rospy.ServiceException as e:
@@ -62,7 +62,7 @@ def grasp_target(robot_,object_grasp_pose):
 if __name__ == "__main__":
     start_time = process_time()
     # Create JSON exporter
-    json_export = JSONOutput()
+    # json_export = JSONOutput()
 
     rospy.init_node('listener', anonymous=True)
     topic = "/rscamera/depth/points"
@@ -169,18 +169,18 @@ if __name__ == "__main__":
 
         #Task Executor
         print("wire_grasping_robot =", wire_grasping_robot)
-        if(wire_grasping_robot == "left"): # wire grasping hand should be right
+        if(wire_grasping_robot == "left"): # wire grasping hand should be left
             object_grasping_robot = "right"
         else:
             wire_grasping_robot = "left"
             object_grasping_robot = "right"
 
         #grasp wire
-        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, json_export, process_time()-start_time)
+        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, None, process_time()-start_time)
 
         #grasp target
         status = grasp_target(object_grasping_robot,object_grasp_pose)
         
-    json_export.export_json()
+    # json_export.export_json()
     rospy.spin()
     # moveit_commander.roscpp_shutdown()

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+import rospy
+# from sensor_msgs.msg import Image, CameraInfo
+# from cv_bridge import CvBridge,CvBridgeError
+# import cv2
+# import numpy as np 
+# import matplotlib.pyplot as plt
 import json
 from datetime import datetime
 
@@ -60,10 +66,9 @@ class JSONOutput:
 
             # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
 
-# if __name__ == "__main__":
-    # rospy.init_node('process_point_cloud_server')
-    # marker_ = rospy.Publisher('/marker_array', MarkerArray, queue_size=1) # define a publisher marker_array
-    # s = rospy.Service('process_point_cloud', ProcessPointCloud, process_point_cloud)
-    # print("Exporting JSON of planned trajectory")
-    # rospy.spin()
-    # pass
+# NODE FOR DOCUMENTING CURRENT POSITION OF ARMS
+if __name__ == "__main__":
+    rospy.init_node('process_json_output')
+
+    print("Exporting JSON of planned trajectory")
+    rospy.spin()
