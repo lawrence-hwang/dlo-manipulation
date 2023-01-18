@@ -8,14 +8,18 @@ import rospy
 # import matplotlib.pyplot as plt
 import json
 from datetime import datetime
+from std_msgs.msg import String
 
 class JSONOutput:
     def __init__(self):
         self.json_dict = []
 
         # Create subscribers to gather data for export
-        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/arm_controller/state")
-        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state")
+        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/arm_controller/state", String, self.data_callback)
+        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state", String, self.data_callback)
+
+    def data_callback(data):
+        rospy.loginfo(data.data)
 
     def id_in_json(self, id) -> int:
         # Return index of matching id in list of dictionaries
@@ -71,6 +75,8 @@ class JSONOutput:
 # NODE FOR DOCUMENTING CURRENT POSITION OF ARMS
 if __name__ == "__main__":
     rospy.init_node('process_json_output')
+
+    json_exporter = JSONOutput()
 
     print("Exporting JSON of planned trajectory")
     rospy.spin()
