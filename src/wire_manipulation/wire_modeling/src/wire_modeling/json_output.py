@@ -19,7 +19,8 @@ class JSONOutput:
         self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state", String, self.data_callback)
 
     def data_callback(data):
-        rospy.loginfo(data.data)
+        # rospy.loginfo(data.data)
+        print(data.data)
 
     def id_in_json(self, id) -> int:
         # Return index of matching id in list of dictionaries

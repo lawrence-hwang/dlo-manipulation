@@ -67,6 +67,9 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
+  <!-- Launch node for colleting and formatting arm trajectories for export -->
+  <node pkg="wire_modeling" type="process_json_output" name="process_json_output" />
+
   <!-- Launch Vision-->
 <group if="$(arg launch_vision)">
     <include file="$(find realsense2_camera)/launch/rs_camera.launch">
