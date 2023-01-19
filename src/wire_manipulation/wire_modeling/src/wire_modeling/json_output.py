@@ -18,7 +18,7 @@ class JSONOutput:
         self.a_bot_status_sub = rospy.Subscriber("/a_bot_/joint_states", JointState, self.data_callback)
         self.b_bot_status_sub = rospy.Subscriber("/b_bot_/joint_states", JointState, self.data_callback)
 
-    def data_callback(data):
+    def data_callback(self, data):
         # rospy.loginfo(data.data)
         print(data.data)
 
