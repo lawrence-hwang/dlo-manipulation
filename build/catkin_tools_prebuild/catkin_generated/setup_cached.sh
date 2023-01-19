@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/drojas/lawrence_wire/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu'
+export PATH='/opt/ros/noetic/bin:/home/drojas/lawrence_venv/bin:/home/drojas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig:/opt/ros/noetic/lib/x86_64-linux-gnu/pkgconfig'
 export PWD='/home/drojas/lawrence_wire/build/catkin_tools_prebuild'
 export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages'
