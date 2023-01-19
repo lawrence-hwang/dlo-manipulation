@@ -9,6 +9,8 @@ import rospy
 import json
 from datetime import datetime
 from control_msgs.msg import JointTrajectoryControllerState
+from time import sleep
+from threading import Thread
 
 class JSONOutput:
     def __init__(self):
@@ -92,12 +94,13 @@ class JSONOutput:
         datetime_str = (datetime.now()).strftime("%m-%d-%Y_%H-%M-%S")
         formatted_filename = "arm-trajectories_" + datetime_str + ".json"
         # print(datetime_str, formatted_filename)
-        # while True:
-        with open(formatted_filename, "w") as outfile:
-            json.dump(self.json_dict, outfile, indent=4)
+        while True:
+            with open(formatted_filename, "w") as outfile:
+                json.dump(self.json_dict, outfile, indent=4)
+                sleep(10)
             # print("dumped")
             # json.dump({"a":"test"}, outfile, indent=4)
-        print("finish export_json")
+        # print("finish export_json")
 
         # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
 
@@ -109,6 +112,7 @@ if __name__ == "__main__":
 
     try:
         rospy.spin()
-        json_exporter.export_json()
+        Thread(target=json_exporter.export_json()).start()
+        # json_exporter.export_json()
     except KeyboardInterrupt:
         print("shut down")
