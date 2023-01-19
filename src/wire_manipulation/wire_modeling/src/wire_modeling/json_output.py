@@ -43,6 +43,7 @@ class JSONOutput:
         }
 
         self.json_dict[callback_args["dict_index"]]["waypoints"].append(new_waypoint)
+        print(self.json_dict)
 
     def id_in_json(self, id) -> int:
         # Return index of matching id in list of dictionaries
@@ -87,24 +88,27 @@ class JSONOutput:
         # return self.json_result
 
     def export_json(self):
+        # print("hit export_json")
         datetime_str = (datetime.now()).strftime("%m-%d-%Y_%H-%M-%S")
         formatted_filename = "arm-trajectories_" + datetime_str + ".json"
-        # file_format = json.dumps(self.json_dict)
+        # print(datetime_str, formatted_filename)
+        # while True:
         with open(formatted_filename, "w") as outfile:
             json.dump(self.json_dict, outfile, indent=4)
+            # print("dumped")
+            # json.dump({"a":"test"}, outfile, indent=4)
+        print("finish export_json")
 
-            # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
+        # NEXT STEPS: SIMPLIFY EXECTUOR.PY TO MOVE SINGLE ARM, TRY JSON EXPORTING CORRECT TRAJECTORY
 
 # NODE FOR DOCUMENTING CURRENT POSITION OF ARMS
 if __name__ == "__main__":
+    print("Exporting JSON of planned trajectory")
     rospy.init_node('json_output')
-
     json_exporter = JSONOutput()
 
-    print("Exporting JSON of planned trajectory")
     try:
         rospy.spin()
+        json_exporter.export_json()
     except KeyboardInterrupt:
         print("shut down")
-    
-    json_exporter.export_json()
