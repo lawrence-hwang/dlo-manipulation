@@ -71,7 +71,7 @@
 
   <!-- Launch node for colleting and formatting arm trajectories for export -->
   <group if="$(arg use_json)">
-    <node pkg="wire_modeling" type="json_output.py" name="json_output" />
+    <node pkg="vision" type="json_output.py" name="json_output" output="screen"/>
   </group>
 
   <!-- Launch Vision-->
