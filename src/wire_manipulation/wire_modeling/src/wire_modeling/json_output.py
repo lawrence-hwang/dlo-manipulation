@@ -80,4 +80,7 @@ if __name__ == "__main__":
     json_exporter = JSONOutput()
 
     print("Exporting JSON of planned trajectory")
-    rospy.spin()
+    try:
+        rospy.spin()
+    except KeyboardInterrupt:
+        print("shut down")

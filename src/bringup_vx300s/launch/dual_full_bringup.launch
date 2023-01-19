@@ -68,7 +68,7 @@
   </include>
 
   <!-- Launch node for colleting and formatting arm trajectories for export -->
-  <node pkg="wire_modeling" type="process_json_output" name="process_json_output" />
+  <node pkg="wire_modeling" type="json_output.py" name="json_output.py" />
 
   <!-- Launch Vision-->
 <group if="$(arg launch_vision)">
