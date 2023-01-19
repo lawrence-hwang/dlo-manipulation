@@ -8,19 +8,41 @@ import rospy
 # import matplotlib.pyplot as plt
 import json
 from datetime import datetime
-from sensor_msgs.msg import JointState
+from control_msgs.msg import JointTrajectoryControllerState
 
 class JSONOutput:
     def __init__(self):
-        self.json_dict = []
+        self.json_dict = [{"_id":"/a_bot_/joint_states", "waypoints":[]},
+                          {"_id":"/b_bot_/joint_states", "waypoints":[]}]
 
         # Create subscribers to gather data for export
-        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/joint_states", JointState, self.data_callback)
-        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/joint_states", JointState, self.data_callback)
+        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/arm_controller/state", JointTrajectoryControllerState, self.data_callback, callback_args={"name":"/a_bot_/joint_states", "dict_index":0})
+        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state", JointTrajectoryControllerState, self.data_callback, callback_args={"name":"/b_bot_/joint_states", "dict_index":1})
 
-    def data_callback(self, data):
-        # rospy.loginfo(data.data)
-        print(data.data)
+    def data_callback(self, data, callback_args):
+        # print(data.actual)
+        # data = dict(data)
+        new_waypoint = dict()
+        new_waypoint["timestamp"] = {
+            "nsec": data.actual.time_from_start.nsecs,
+            "sec": data.actual.time_from_start.secs
+        }
+        new_waypoint["smoothness"] = 0 # 0 for now, no smoothness value
+        new_waypoint["pose"] = {
+            "position": {
+                "x": data.actual.positions[0],
+                "y": data.actual.positions[1],
+                "z": data.actual.positions[2]
+            },
+            "orientation": {
+                "x": data.actual.positions[3],
+                "y": data.actual.positions[4],
+                "z": data.actual.positions[5],
+                "w": 0.0 # data["actual"]["positions"][6]
+            }
+        }
+
+        self.json_dict[callback_args["dict_index"]]["waypoints"].append(new_waypoint)
 
     def id_in_json(self, id) -> int:
         # Return index of matching id in list of dictionaries
@@ -65,7 +87,7 @@ class JSONOutput:
         # return self.json_result
 
     def export_json(self):
-        datetime_str = (datetime.now()).strftime("%d-%m-%Y_%H-%M-%S")
+        datetime_str = (datetime.now()).strftime("%m-%d-%Y_%H-%M-%S")
         formatted_filename = "arm-trajectories_" + datetime_str + ".json"
         # file_format = json.dumps(self.json_dict)
         with open(formatted_filename, "w") as outfile:
@@ -84,3 +106,5 @@ if __name__ == "__main__":
         rospy.spin()
     except KeyboardInterrupt:
         print("shut down")
+    
+    json_exporter.export_json()
