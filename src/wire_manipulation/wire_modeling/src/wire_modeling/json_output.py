@@ -75,7 +75,7 @@ class JSONOutput:
 
 # NODE FOR DOCUMENTING CURRENT POSITION OF ARMS
 if __name__ == "__main__":
-    rospy.init_node('process_json_output')
+    rospy.init_node('json_output')
 
     json_exporter = JSONOutput()
 
