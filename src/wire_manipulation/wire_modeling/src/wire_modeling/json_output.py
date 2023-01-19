@@ -8,15 +8,15 @@ import rospy
 # import matplotlib.pyplot as plt
 import json
 from datetime import datetime
-from std_msgs.msg import String
+from sensor_msgs.msg import JointState
 
 class JSONOutput:
     def __init__(self):
         self.json_dict = []
 
         # Create subscribers to gather data for export
-        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/arm_controller/state", String, self.data_callback)
-        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/arm_controller/state", String, self.data_callback)
+        self.a_bot_status_sub = rospy.Subscriber("/a_bot_/joint_states", JointState, self.data_callback)
+        self.b_bot_status_sub = rospy.Subscriber("/b_bot_/joint_states", JointState, self.data_callback)
 
     def data_callback(data):
         # rospy.loginfo(data.data)
