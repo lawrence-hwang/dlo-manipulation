@@ -2,16 +2,14 @@
 
 #ROS
 import rospy
-import geometry_msgs.msg
 from sensor_msgs.msg import PointCloud2
-from time import process_time
+import geometry_msgs.msg
 
 # custom libs
 from wire_modeling.wire_sim import Collisions,TargetObject,WireModel,WireSim
 from wire_modeling_msgs.srv import *
 from dual_robot_msgs.srv import *
 from wire_modeling.wire_grasp_toolbox import WireGraspToolbox
-from wire_modeling.json_output import JSONOutput
 
 #python
 import numpy as np
@@ -34,15 +32,11 @@ def process_point_cloud_client(points):
          print("Service call failed: %s"%e)
 
 # Client call to grasp and move wire 
-def grasp_wire(robot_, wire_grasp_pose, pull_vec, json, time):
+def grasp_wire(robot_,wire_grasp_pose,pull_vec):
      rospy.wait_for_service('grasp_wire_service')
      try:
          grasp_wire_input = rospy.ServiceProxy('grasp_wire_service', GraspWire)
          response = grasp_wire_input(robot_,wire_grasp_pose,pull_vec)
-
-         # JSON exporting
-        #  json.add_waypoint(robot_, wire_grasp_pose, time)
-
          return response
      except rospy.ServiceException as e:
          print("Service call failed: %s"%e)
@@ -60,10 +54,6 @@ def grasp_target(robot_,object_grasp_pose):
 
 #*** Node Starts Here ***#
 if __name__ == "__main__":
-    start_time = process_time()
-    # Create JSON exporter
-    # json_export = JSONOutput()
-
     rospy.init_node('listener', anonymous=True)
     topic = "/rscamera/depth/points"
 
@@ -168,19 +158,17 @@ if __name__ == "__main__":
         object_grasp_pose.position.z = float(gop[2])
 
         #Task Executor
-        print("wire_grasping_robot =", wire_grasping_robot)
-        if(wire_grasping_robot == "left"): # wire grasping hand should be left
+        if(wire_grasping_robot == "left"):
             object_grasping_robot = "right"
         else:
-            wire_grasping_robot = "left"
-            object_grasping_robot = "right"
+            object_grasping_robot = "left"
 
         #grasp wire
-        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec, None, process_time()-start_time)
+        status = grasp_wire(wire_grasping_robot,wire_grasp_pose,pull_vec)
 
         #grasp target
-        status = grasp_target(object_grasping_robot,object_grasp_pose)
+        # status = grasp_target(object_grasping_robot,object_grasp_pose)
         
-    # json_export.export_json()
-    rospy.spin()
-    # moveit_commander.roscpp_shutdown()
+
+
+    #rospy.spin()
