@@ -87,9 +87,7 @@ if __name__ == "__main__":
     Ks = 13.1579
     Kb = 6.13
     Kd = 5.26
-    #Ks = 237.5
-    #Kb = 25
-    #Kd = 125
+    # Wire attributes (stiffness, length, etc); don't touch
     wire_model = WireModel(L,M,Ks,Kb,Kd,wire_nodes.wire_class) # create Wire object
 
 
@@ -157,7 +155,9 @@ if __name__ == "__main__":
         object_grasp_pose.position.y = float(gop[1])
         object_grasp_pose.position.z = float(gop[2])
 
+        print(wire_grasp_pose)
         #Task Executor
+        # print("wire_grasping_robot orientation:",wire_grasping_robot)
         if(wire_grasping_robot == "left"):
             object_grasping_robot = "right"
         else:
