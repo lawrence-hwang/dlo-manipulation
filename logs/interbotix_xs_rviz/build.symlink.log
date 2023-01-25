@@ -1,4 +1,4 @@
-Linked: (/home/drojas/lawrence_wire/devel/.private/interbotix_xs_rviz/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig.cmake, /home/drojas/lawrence_wire/devel/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/interbotix_xs_rviz/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig-version.cmake, /home/drojas/lawrence_wire/devel/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig-version.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/interbotix_xs_rviz/lib/libinterbotix_xs_rviz.so, /home/drojas/lawrence_wire/devel/lib/libinterbotix_xs_rviz.so)
-Linked: (/home/drojas/lawrence_wire/devel/.private/interbotix_xs_rviz/lib/pkgconfig/interbotix_xs_rviz.pc, /home/drojas/lawrence_wire/devel/lib/pkgconfig/interbotix_xs_rviz.pc)
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/interbotix_xs_rviz/cmake/interbotix_xs_rvizConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/libinterbotix_xs_rviz.so
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/interbotix_xs_rviz.pc

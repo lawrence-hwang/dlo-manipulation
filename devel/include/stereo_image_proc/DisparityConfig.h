@@ -1,1 +1,0 @@
-/home/drojas/lawrence_wire/devel/.private/stereo_image_proc/include/stereo_image_proc/DisparityConfig.h

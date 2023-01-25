@@ -1,4 +1,4 @@
-Linked: (/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake, /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake, /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/lib/libdynamixel_workbench_toolbox.so, /home/drojas/lawrence_wire/devel/lib/libdynamixel_workbench_toolbox.so)
-Linked: (/home/drojas/lawrence_wire/devel/.private/dynamixel_workbench_toolbox/lib/pkgconfig/dynamixel_workbench_toolbox.pc, /home/drojas/lawrence_wire/devel/lib/pkgconfig/dynamixel_workbench_toolbox.pc)
+Symlinking /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/dynamixel_workbench_toolbox/cmake/dynamixel_workbench_toolboxConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/libdynamixel_workbench_toolbox.so
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/dynamixel_workbench_toolbox.pc

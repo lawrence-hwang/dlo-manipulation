@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_70b89/fast && /usr/bin/make -f CMakeFiles/cmTC_70b89.dir/build.make CMakeFiles/cmTC_70b89.dir/build
+Run Build Command(s):/usr/bin/make cmTC_68ffb/fast && /usr/bin/make -f CMakeFiles/cmTC_68ffb.dir/build.make CMakeFiles/cmTC_68ffb.dir/build
 make[1]: Entering directory '/home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_70b89.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_70b89.dir/src.c.o   -c /home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_70b89
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70b89.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_70b89.dir/src.c.o  -o cmTC_70b89 
-/usr/bin/ld: CMakeFiles/cmTC_70b89.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_68ffb.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_68ffb.dir/src.c.o   -c /home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_68ffb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68ffb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_68ffb.dir/src.c.o  -o cmTC_68ffb 
+/usr/bin/ld: CMakeFiles/cmTC_68ffb.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_70b89.dir/build.make:87: cmTC_70b89] Error 1
+make[1]: *** [CMakeFiles/cmTC_68ffb.dir/build.make:87: cmTC_68ffb] Error 1
 make[1]: Leaving directory '/home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_70b89/fast] Error 2
+make: *** [Makefile:121: cmTC_68ffb/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ccac4/fast && /usr/bin/make -f CMakeFiles/cmTC_ccac4.dir/build.make CMakeFiles/cmTC_ccac4.dir/build
+Run Build Command(s):/usr/bin/make cmTC_85ceb/fast && /usr/bin/make -f CMakeFiles/cmTC_85ceb.dir/build.make CMakeFiles/cmTC_85ceb.dir/build
 make[1]: Entering directory '/home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ccac4.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ccac4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_ccac4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccac4.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_ccac4.dir/CheckFunctionExists.c.o  -o cmTC_ccac4  -lpthreads 
+Building C object CMakeFiles/cmTC_85ceb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_85ceb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85ceb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85ceb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_85ceb.dir/CheckFunctionExists.c.o  -o cmTC_85ceb  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_ccac4.dir/build.make:87: cmTC_ccac4] Error 1
+make[1]: *** [CMakeFiles/cmTC_85ceb.dir/build.make:87: cmTC_85ceb] Error 1
 make[1]: Leaving directory '/home/drojas/lawrence_wire/build/interbotix_xsarm_dual/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_ccac4/fast] Error 2
+make: *** [Makefile:121: cmTC_85ceb/fast] Error 2
 
 
 

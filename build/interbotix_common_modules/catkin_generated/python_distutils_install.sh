@@ -24,7 +24,7 @@ echo_and_run mkdir -p "$DESTDIR/home/drojas/lawrence_wire/install/lib/python3/di
 echo_and_run /usr/bin/env \
     PYTHONPATH="/home/drojas/lawrence_wire/install/lib/python3/dist-packages:/home/drojas/lawrence_wire/build/interbotix_common_modules/lib/python3/dist-packages:$PYTHONPATH" \
     CATKIN_BINARY_DIR="/home/drojas/lawrence_wire/build/interbotix_common_modules" \
-    "/usr/bin/python3" \
+    "/home/drojas/lawrence_venv/bin/python3" \
     "/home/drojas/lawrence_wire/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_common_modules/setup.py" \
      \
     build --build-base "/home/drojas/lawrence_wire/build/interbotix_common_modules" \

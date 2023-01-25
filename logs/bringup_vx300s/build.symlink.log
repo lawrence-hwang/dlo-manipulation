@@ -1,3 +1,3 @@
-Linked: (/home/drojas/lawrence_wire/devel/.private/bringup_vx300s/share/bringup_vx300s/cmake/bringup_vx300sConfig.cmake, /home/drojas/lawrence_wire/devel/share/bringup_vx300s/cmake/bringup_vx300sConfig.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/bringup_vx300s/share/bringup_vx300s/cmake/bringup_vx300sConfig-version.cmake, /home/drojas/lawrence_wire/devel/share/bringup_vx300s/cmake/bringup_vx300sConfig-version.cmake)
-Linked: (/home/drojas/lawrence_wire/devel/.private/bringup_vx300s/lib/pkgconfig/bringup_vx300s.pc, /home/drojas/lawrence_wire/devel/lib/pkgconfig/bringup_vx300s.pc)
+Symlinking /home/drojas/lawrence_wire/devel/share/bringup_vx300s/cmake/bringup_vx300sConfig.cmake
+Symlinking /home/drojas/lawrence_wire/devel/share/bringup_vx300s/cmake/bringup_vx300sConfig-version.cmake
+Symlinking /home/drojas/lawrence_wire/devel/lib/pkgconfig/bringup_vx300s.pc
